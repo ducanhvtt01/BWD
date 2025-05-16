@@ -343,7 +343,7 @@ section {
 }
 .testimonials {
   background: #4f3dd9;
-  padding: 60px 20px;
+  padding: 50px 20px;
   border-radius: 20px;
   max-width: 1000px;
   margin: 40px auto;
@@ -372,7 +372,7 @@ section {
 .testimonial-slide {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 30px;
+  padding: 30px 80px;
   margin-right: 20px;
   min-width: 100%;
   display: flex;
@@ -408,17 +408,18 @@ section {
 
 .nav-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 28px;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: background 0.3s;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 34px;
+    background-color: rgb(255 255 255 / 29%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+    overflow: hidden;
 }
 
 .nav-button:hover {
@@ -426,11 +427,11 @@ section {
 }
 
 .prev {
-  left: 10px;
+  left: 18px;
 }
 
 .next {
-  right: 10px;
+  right: 18px;
 }
 
 .testimonial-track {
@@ -454,4 +455,23 @@ section {
 
   /* Missions list column layout */
   .missions-list li { flex-direction:column; align-items:flex-start; gap:0.7em; }
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #222e3a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dot.active {
+  background: #3cf;
 }

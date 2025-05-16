@@ -30,34 +30,70 @@ const appearOnScroll = new IntersectionObserver(
 );
 faders.forEach(el => appearOnScroll.observe(el));
 
-// ---------- Testimonials Slider ----------
+// Testimonial Slider
 document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.slider__track');
-  if (!track) return;
-
+  const track = document.querySelector('.testimonial-track');
   const slides = Array.from(track.children);
-  const prevBtn = document.getElementById('prev');
-  const nextBtn = document.getElementById('next');
-  let index = 0;
+  const nextBtn = document.querySelector('.nav-button.next');
+  const prevBtn = document.querySelector('.nav-button.prev');
+  const dotsContainer = document.querySelector('.testimonial-dots');
+  let currentIndex = 0;
 
-  const updateSlider = () => {
-    track.style.transform = `translateX(-${index * 100}%)`;
+  // Tạo dot động
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot';
+    dot.setAttribute('aria-label', `Chuyển đến slide ${i + 1}`);
+    dot.addEventListener('click', () => moveToSlide(i));
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
+
+  // Set initial position
+  const updateSliderPosition = () => {
+    const offset = slides[currentIndex].offsetLeft;
+    track.style.transform = `translateX(-${offset}px)`;
   };
 
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    updateSlider();
-  });
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateSlider();
+  // Update dots state
+  const updateDotsState = () => {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  };
+
+  // Move to specific slide
+  const moveToSlide = (index) => {
+    currentIndex = index;
+    updateSliderPosition();
+    updateDotsState();
+  };
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    updateSliderPosition();
   });
 
-  /* Autoplay (tuỳ chọn) */
-  // setInterval(() => {
-  //   index = (index + 1) % slides.length;
-  //   updateSlider();
-  // }, 5000);
+  // Next button click (loop)
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+      moveToSlide(currentIndex + 1);
+    } else {
+      moveToSlide(0);
+    }
+  });
+
+  // Previous button click (loop)
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      moveToSlide(currentIndex - 1);
+    } else {
+      moveToSlide(slides.length - 1);
+    }
+  });
+
+  // Initialize
+  moveToSlide(0);
 });
 
 /* ------- phần JS khác của bạn (điểm thưởng, burger menu…) ở dưới ------- */
