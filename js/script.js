@@ -96,6 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
   moveToSlide(0);
 });
 
+/* --------------------------------------------------
+   Smooth Scroll Polyfill
+-------------------------------------------------- */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      const headerOffset = 80; // Điều chỉnh offset tùy theo chiều cao của header
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
 /* ------- phần JS khác của bạn (điểm thưởng, burger menu…) ở dưới ------- */
 
 

@@ -10,7 +10,8 @@
   margin: 0;
   padding: 0;
 }
-html { -webkit-font-smoothing: antialiased; }
+html { -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth; }
 
 /* ---------- 2. ROOT VARIABLES ---------- */
 :root {
@@ -31,8 +32,9 @@ body {
   color: var(--clr-dark);
   background: var(--clr-bg);
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
+
+
 h1, h2, h3 { font-weight: 700; color: var(--clr-dark); line-height: 1.25; }
 h2 { font-size: clamp(1.6rem, 4vw, 2.5rem); text-align: center; margin-bottom: 2rem; }
 p  { color: var(--clr-grey); }
