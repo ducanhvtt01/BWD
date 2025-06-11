@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<title>Khóa học | SoftSkill4All</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
+<script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script defer src="/js/main.js"></script>
+
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo">SoftSkill4All</div>
+    <div>
+      <a href="/">Trang chủ</a>
+      <a href="/skills">Kỹ năng</a>
+      <a href="/courses">Khóa học</a>
+      <a href="/children">Trẻ em</a>
+      <a href="/donate">Donate</a>
+      <a href="/login">Đăng nhập</a>
+    </div>
+  </nav>
+</header>
+
+
+<section class="hero" data-aos="fade-up">
+  <h1>Danh sách khóa học</h1>
+  <p>Chọn khóa học phù hợp với nhu cầu của bạn.</p>
+  <svg class="wave" viewBox="0 0 1440 320"><path fill="#f0f8ff" fill-opacity="1" d="M0,224L40,197.3C80,171,160,117,240,112C320,107,400,149,480,181.3C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,160C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+</section>
+
+<section class="section" data-aos="fade-up">
+  <div class="filter-bar container">
+    <input type="text" id="search" placeholder="Tìm kiếm khóa học...">
+    <select id="level">
+      <option value="">Tất cả cấp độ</option>
+      <option value="basic">Cơ bản</option>
+      <option value="advanced">Nâng cao</option>
+    </select>
+  </div>
+
+  <div class="cards">
+    <div class="card course-card" data-level="basic">
+      <h3>Giao tiếp tự tin</h3>
+      <p>15 bài • 1200 người tham gia</p>
+      <a href="#" class="btn">Xem chi tiết</a>
+    </div>
+    <div class="card course-card" data-level="basic">
+      <h3>Làm việc nhóm hiệu quả</h3>
+      <p>12 bài • 980 người tham gia</p>
+      <a href="#" class="btn">Xem chi tiết</a>
+    </div>
+    <div class="card course-card" data-level="advanced">
+      <h3>Tư duy sáng tạo</h3>
+      <p>20 bài • 540 người tham gia</p>
+      <a href="#" class="btn">Xem chi tiết</a>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="col">
+    <h4>Liên hệ</h4>
+    <a href="mailto:hello@softskill4all.org">hello@softskill4all.org</a>
+    <a href="#">+84 123 456 789</a>
+  </div>
+  <div class="col">
+    <h4>Mạng xã hội</h4>
+    <a href="#">Facebook</a>
+    <a href="#">YouTube</a>
+  </div>
+  <div class="col">
+    <h4>Chương trình</h4>
+    <a href="/skills">Kỹ năng</a>
+    <a href="/courses">Khóa học</a>
+  </div>
+</footer>
+
+<script defer src="/js/filter.js"></script>
+</body>
+</html>

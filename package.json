@@ -1,26 +1,17 @@
 {
-  "name": "softskills-wow-pages",
-  "version": "0.1.0",
-  "private": true,
+  "name": "softskills-web",
+  "version": "2.0.0",
+  "description": "Soft Skills For All - Modern UI",
+  "main": "app.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
+  "license": "MIT",
   "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "framer-motion": "^11.0.0",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "express": "^4.19.0"
   },
   "devDependencies": {
-    "@types/node": "24.0.0",
-    "@types/react": "19.1.7",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.4.0"
+    "nodemon": "^3.0.0"
   }
 }
