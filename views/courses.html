@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
 <meta charset="UTF-8">
 <title>Khóa học | SoftSkill4All</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +16,16 @@
 <link rel="stylesheet" href="/css/swiper.css">
 <link rel="stylesheet" href="/css/footer.css">
 <link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/courses.css">
 <link rel="stylesheet" href="/css/responsive.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
 <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 <script defer src="/js/main.js"></script>
-
+<script defer src="/js/courses.js"></script>
 </head>
 <body>
 
@@ -42,42 +43,263 @@
   </nav>
 </header>
 
-
 <section class="hero" data-aos="fade-up">
-  <h1>Danh sách khóa học</h1>
-  <p>Chọn khóa học phù hợp với nhu cầu của bạn.</p>
+  <h1>Danh sách Khóa học</h1>
+  <p>Bắt đầu từ những kỹ năng cơ bản, vươn tới sự chuyên nghiệp.</p>
   <svg class="wave" viewBox="0 0 1440 320"><path fill="#f0f8ff" fill-opacity="1" d="M0,224L40,197.3C80,171,160,117,240,112C320,107,400,149,480,181.3C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,160C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 </section>
 
-<section class="section" data-aos="fade-up">
-  <div class="filter-bar container">
-    <input type="text" id="search" placeholder="Tìm kiếm khóa học...">
-    <select id="level">
-      <option value="">Tất cả cấp độ</option>
-      <option value="basic">Cơ bản</option>
-      <option value="advanced">Nâng cao</option>
-    </select>
-  </div>
+<section class="search-section" data-aos="fade-up">
+  <div class="search-container">
+    <div class="search-main">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-input" placeholder="Tìm kiếm nội dung bất kỳ">
+      </div>
+    </div>
 
-  <div class="cards">
-    <div class="card course-card" data-level="basic">
-      <h3>Giao tiếp tự tin</h3>
-      <p>15 bài • 1200 người tham gia</p>
-      <a href="#" class="btn">Xem chi tiết</a>
+    <div class="category-pills">
+      <button class="category-pill active" data-category="all"><i class="fas fa-th-large"></i>Tất cả</button>
+      <button class="category-pill" data-category="communication"><i class="fas fa-comments"></i>Kỹ năng giao tiếp</button>
+      <button class="category-pill" data-category="leadership"><i class="fas fa-users"></i>Kỹ năng lãnh đạo</button>
+      <button class="category-pill" data-category="life"><i class="fas fa-heart"></i>Kỹ năng sống</button>
+      <button class="category-pill" data-category="children"><i class="fas fa-child"></i>Dành cho trẻ em</button>
+      <button class="category-pill" data-category="business"><i class="fas fa-chart-line"></i>Kinh doanh</button>
+      <button class="category-pill" data-category="tech"><i class="fas fa-laptop-code"></i>Công nghệ</button>
+      <button class="category-pill" data-category="language"><i class="fas fa-language"></i>Ngoại ngữ</button>
+      <button class="category-pill" data-category="art"><i class="fas fa-palette"></i>Nghệ thuật</button>
     </div>
-    <div class="card course-card" data-level="basic">
-      <h3>Làm việc nhóm hiệu quả</h3>
-      <p>12 bài • 980 người tham gia</p>
-      <a href="#" class="btn">Xem chi tiết</a>
-    </div>
-    <div class="card course-card" data-level="advanced">
-      <h3>Tư duy sáng tạo</h3>
-      <p>20 bài • 540 người tham gia</p>
-      <a href="#" class="btn">Xem chi tiết</a>
+
+    <div class="sort-options">
+      <button class="sort-option active" data-sort="latest"><i class="fas fa-clock"></i>Mới nhất</button>
+      <button class="sort-option" data-sort="popular"><i class="fas fa-fire"></i>Phổ biến nhất</button>
     </div>
   </div>
 </section>
 
+<section class="section main-courses" data-aos="fade-up">
+    <div class="section-header">
+        <h2>Khóa học phổ biến</h2>
+        <p>Các khóa học được nhiều người quan tâm nhất</p>
+    </div>
+
+    <div class="courses-grid">
+        <div class="course-card communication" data-date="2024-03-10" data-rating="4.5">
+            <div class="card-tag">Kỹ năng giao tiếp</div>
+            <div class="course-image">
+                <img src="/images/courses/communication.jpg" alt="Giao tiếp tự tin">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Giao tiếp tự tin</h3>
+                <p class="course-desc">Khóa học giúp bạn phát triển kỹ năng giao tiếp và xây dựng sự tự tin trong mọi tình huống.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span>4.5</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 15 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 12 bài học</span>
+                </div>
+                <a href="/course/giao-tiep-tu-tin" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card leadership" data-date="2024-03-08" data-rating="4.8">
+            <div class="card-tag">Kỹ năng lãnh đạo</div>
+            <div class="course-image">
+                <img src="/images/courses/leadership.jpg" alt="Nghệ thuật lãnh đạo">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Nghệ thuật lãnh đạo</h3>
+                <p class="course-desc">Phát triển tư duy và kỹ năng lãnh đạo hiệu quả trong môi trường làm việc hiện đại.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span>4.8</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 20 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 15 bài học</span>
+                </div>
+                <a href="/course/nghe-thuat-lanh-dao" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card business" data-date="2024-03-05" data-rating="4.0">
+            <div class="card-tag">Kinh doanh</div>
+            <div class="course-image">
+                <img src="/images/courses/business.jpg" alt="Khởi nghiệp kinh doanh">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Khởi nghiệp kinh doanh</h3>
+                <p class="course-desc">Hướng dẫn từ A-Z về cách bắt đầu và phát triển doanh nghiệp của bạn.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <span>4.0</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 25 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 18 bài học</span>
+                </div>
+                <a href="/course/khoi-nghiep-kinh-doanh" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card tech" data-date="2024-03-01" data-rating="4.6">
+            <div class="card-tag">Công nghệ</div>
+            <div class="course-image">
+                <img src="/images/courses/tech.jpg" alt="Lập trình cơ bản">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Lập trình cơ bản</h3>
+                <p class="course-desc">Làm quen với thế giới lập trình qua các ngôn ngữ phổ biến nhất hiện nay.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span>4.6</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 30 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 20 bài học</span>
+                </div>
+                <a href="/course/lap-trinh-co-ban" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card language" data-date="2024-02-28" data-rating="4.7">
+            <div class="card-tag">Ngoại ngữ</div>
+            <div class="course-image">
+                <img src="/images/courses/language.jpg" alt="Tiếng Anh giao tiếp">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Tiếng Anh giao tiếp</h3>
+                <p class="course-desc">Phương pháp học tiếng Anh hiệu quả thông qua tình huống thực tế.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span>4.7</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 40 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 25 bài học</span>
+                </div>
+                <a href="/course/tieng-anh-giao-tiep" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card art" data-date="2024-02-25" data-rating="4.9">
+            <div class="card-tag">Nghệ thuật</div>
+            <div class="course-image">
+                <img src="/images/courses/art.jpg" alt="Vẽ digital cơ bản">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Vẽ digital cơ bản</h3>
+                <p class="course-desc">Khám phá nghệ thuật vẽ digital với các công cụ và kỹ thuật hiện đại.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span>4.9</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 35 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 22 bài học</span>
+                </div>
+                <a href="/course/ve-digital-co-ban" class="btn">Học ngay</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section children-section" data-aos="fade-up">
+    <div class="section-header">
+        <h2>Khóa học cho trẻ em</h2>
+        <p>Phát triển kỹ năng sớm cho con yêu của bạn</p>
+    </div>
+
+    <div class="courses-grid">
+        <div class="course-card children" data-date="2024-02-28" data-rating="4.6">
+            <div class="card-tag">Dành cho trẻ em</div>
+            <div class="course-image">
+                <img src="/images/courses/social-skills-kids.jpg" alt="Kỹ năng xã hội cho trẻ">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Kỹ năng xã hội cho trẻ</h3>
+                <p class="course-desc">Giúp trẻ phát triển các kỹ năng giao tiếp và tương tác xã hội cơ bản.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>4.6</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 10 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 8 bài học</span>
+                </div>
+                <a href="/course/ky-nang-xa-hoi-tre-em" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card children" data-date="2024-02-25" data-rating="4.9">
+            <div class="card-tag">Dành cho trẻ em</div>
+            <div class="course-image">
+                <img src="/images/courses/creative-kids.jpg" alt="Phát triển tư duy sáng tạo">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Phát triển tư duy sáng tạo</h3>
+                <p class="course-desc">Khơi dậy khả năng sáng tạo và tư duy logic cho trẻ qua các hoạt động thú vị.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>4.9</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 12 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 10 bài học</span>
+                </div>
+                <a href="/course/tu-duy-sang-tao-tre-em" class="btn">Học ngay</a>
+            </div>
+        </div>
+
+        <div class="course-card children" data-date="2024-02-20" data-rating="4.7">
+            <div class="card-tag">Dành cho trẻ em</div>
+            <div class="course-image">
+                <img src="/images/courses/english-kids.jpg" alt="Tiếng Anh cho trẻ em">
+            </div>
+            <div class="course-content">
+                <h3 class="course-title">Tiếng Anh cho trẻ em</h3>
+                <p class="course-desc">Phương pháp học tiếng Anh hiệu quả và vui nhộn dành riêng cho trẻ em.</p>
+                <div class="course-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>4.7</span>
+                </div>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 15 giờ</span>
+                    <span><i class="fas fa-book-open"></i> 12 bài học</span>
+                </div>
+                <a href="/course/tieng-anh-tre-em" class="btn">Học ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination-container">
+        <button class="pagination-button" onclick="changePage('prev')"><i class="fas fa-chevron-left"></i></button>
+        <button class="pagination-button active" onclick="changePage(1)">1</button>
+        <button class="pagination-button" onclick="changePage(2)">2</button>
+        <button class="pagination-button" onclick="changePage(3)">3</button>
+        <button class="pagination-button" onclick="changePage('next')"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
 
 <footer>
   <div class="col">
@@ -97,6 +319,5 @@
   </div>
 </footer>
 
-<script defer src="/js/filter.js"></script>
 </body>
 </html>
