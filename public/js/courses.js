@@ -161,7 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredMainCourses = filterCourses(Array.from(mainCourseCards));
         const totalPages = Math.ceil(filteredMainCourses.length / itemsPerPage);
         
-        console.log('Changing to page:', page, 'Total pages:', totalPages);
+        // Lưu vị trí scroll hiện tại của phần tử pagination
+        const paginationElement = document.querySelector('.pagination-container');
+        const paginationRect = paginationElement.getBoundingClientRect();
+        const offsetFromBottom = window.innerHeight - paginationRect.bottom;
         
         if (page === 'prev' && currentPage > 1) {
             currentPage--;
@@ -171,18 +174,16 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage = page;
         }
         
-        console.log('New current page:', currentPage);
-        
-        // Lưu vị trí scroll hiện tại
-        const coursesSection = document.querySelector('.courses-grid');
-        const currentScroll = coursesSection.getBoundingClientRect().top + window.pageYOffset;
-        
         filterAndDisplayCourses();
         
-        // Giữ nguyên vị trí scroll
-        window.scrollTo({
-            top: currentScroll,
-            behavior: 'smooth'
+        // Đặt lại vị trí scroll để giữ pagination ở cùng vị trí tương đối so với viewport
+        requestAnimationFrame(() => {
+            const newPaginationRect = paginationElement.getBoundingClientRect();
+            const newScrollPosition = window.pageYOffset + (newPaginationRect.bottom - (window.innerHeight - offsetFromBottom));
+            window.scrollTo({
+                top: newScrollPosition,
+                behavior: 'instant'
+            });
         });
     };
 
@@ -202,17 +203,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Xử lý category pills
     categoryPills.forEach(pill => {
         pill.addEventListener('click', () => {
-            // Lưu lại giá trị search hiện tại
-            const currentSearchValue = searchInput.value;
-            
             categoryPills.forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
             currentCategory = pill.dataset.category || 'all';
             currentPage = 1;
-            
-            // Giữ nguyên giá trị search
-            searchInput.value = currentSearchValue;
-            searchQuery = currentSearchValue;
+
+            // Reset search khi chọn category "Tất cả"
+            if (currentCategory === 'all') {
+                searchInput.value = '';
+                searchQuery = '';
+            } else {
+                // Giữ nguyên giá trị search cho các category khác
+                searchQuery = searchInput.value;
+            }
             
             filterAndDisplayCourses();
         });
