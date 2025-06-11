@@ -1,0 +1,5 @@
+footer{ background:var(--primary); padding:40px 20px; display:flex; flex-wrap:wrap; justify-content:center; gap:48px; color:var(--text);}
+footer .col{ min-width:200px;}
+footer h4{ margin-bottom:12px;}
+footer a{ text-decoration:none; color:var(--text); display:block; margin-bottom:8px;}
+footer a:hover{opacity:.8}

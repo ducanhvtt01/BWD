@@ -1,0 +1,4 @@
+.swiper{ width:100%; padding:40px 0;}
+.swiper-slide{ background:var(--white); border-radius:20px; padding:32px 24px; box-shadow:0 6px 24px rgba(0,0,0,.05); max-width:600px; margin:auto; text-align:center;}
+.swiper-slide p{ font-style:italic; margin-bottom:12px;}
+.swiper-slide span{ font-weight:600;}

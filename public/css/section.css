@@ -1,0 +1,11 @@
+.section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+.section h2{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:2rem;
+}
+.container{ max-width:1200px; margin:auto; }

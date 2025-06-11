@@ -1,0 +1,24 @@
+header{
+  position:sticky;
+  top:0;
+  width:100%;
+  background:rgba(166,209,255,0.8);
+  backdrop-filter:blur(8px);
+  transition:background .3s;
+  z-index:100;
+}
+header.scrolled{
+  background:rgba(166,209,255,1);
+}
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:1rem 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{ font-size:1.7rem; font-weight:700; }
+nav a{ margin-left:1rem; text-decoration:none; font-weight:600; color:var(--text); position:relative;}
+nav a::after{ content:''; position:absolute; width:0; height:2px; left:0; bottom:-4px; background:var(--primary-dark); transition:width .3s;}
+nav a:hover::after{width:100%}
