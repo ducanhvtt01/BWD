@@ -1,24 +1,74 @@
-header{
-  position:sticky;
-  top:0;
-  width:100%;
-  background:rgba(166,209,255,0.8);
-  backdrop-filter:blur(8px);
-  transition:background .3s;
-  z-index:100;
+/* =======================================================
+   HEADER – COURSES STANDARD (override cuối cùng)
+   ======================================================= */
+:root{
+  --header-h : 72px;          /* desktop */
+  --nav-fs   : 1.17rem;
 }
-header.scrolled{
-  background:rgba(166,209,255,1);
+
+/* ====== Vỏ header ====== */
+header,
+.header,
+.header-transparent,
+.header-scrolled{
+  height        : var(--header-h) !important;
+  padding-block : 0 !important;
+  display       : flex;
+  align-items   : center;
+  width         : 100%;
+  z-index       : 1000;
+  background    : #d6ebffcc;
+  backdrop-filter: blur(16px) saturate(140%);
+  border-bottom : 1px solid rgba(18,55,91,.08);
 }
-nav{
-  max-width:1200px;
-  margin:auto;
-  padding:1rem 1.5rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+
+/* ====== Container nav ====== */
+header nav,
+.header nav,
+.header-transparent nav{
+  width   : min(90%, 1200px);
+  margin  : 0 auto;
+  padding : 0 2rem !important;    /* RESET mọi padding cũ */
+  height  : 100%;
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.logo{ font-size:1.7rem; font-weight:700; }
-nav a{ margin-left:1rem; text-decoration:none; font-weight:600; color:var(--text); position:relative;}
-nav a::after{ content:''; position:absolute; width:0; height:2px; left:0; bottom:-4px; background:var(--primary-dark); transition:width .3s;}
-nav a:hover::after{width:100%}
+
+/* ====== Logo ====== */
+header .logo{
+  font-size   : 1.45rem;
+  font-weight : 800;
+  letter-spacing: .02em;
+  color       : #1761a0;
+}
+
+/* ====== Link menu ====== */
+header nav a,
+.header nav a,
+.header-transparent nav a{
+  font-size   : var(--nav-fs) !important;
+  font-weight : 700;
+  line-height : var(--header-h);
+  padding     : 0 1.1rem;
+  color       : #1761a0;
+  text-decoration: none;
+  border-radius : 100vmax;
+  transition  : background .25s, color .2s;
+}
+
+header nav a:hover{
+  background : rgba(0,0,0,.05);
+}
+header nav a.active,
+header nav a[aria-current="page"]{
+  color      : #2596ff;
+  background : #eaf6ff;
+}
+
+/* ====== Mobile (≤ 768 px) ====== */
+@media (max-width:768px){
+  :root      { --header-h:64px; }
+  header nav a{ font-size:1.02rem !important; padding:0 .6rem; }
+  header .logo{ font-size:1.25rem; }
+}

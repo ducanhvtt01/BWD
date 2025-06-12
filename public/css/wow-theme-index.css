@@ -1,0 +1,395 @@
+/* =====================================================
+   WOW x2 THEME – Ultra‑modern makeover for ACE SKILLS (June 2025)
+   Drop this file after your legacy stylesheets → it overrides + enhances.
+   ===================================================== */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Design Tokens ---------- */
+:root {
+  /* Dynamic hue lets you shift the brand colour in one place */
+  --hue: 210;
+  --sat: 100%;
+  --l1: 65%;   /* light */
+  --l2: 58%;   /* normal */
+  --l3: 48%;   /* dark */
+
+  --primary: hsl(var(--hue) var(--sat) var(--l2));
+  --primary-dark: hsl(var(--hue) var(--sat) var(--l3));
+  --accent: hsl(calc(var(--hue) + 35) 90% 60%);
+
+  --bg: #fdfdfd;
+  --text: #141414;
+  --text-muted: #555;
+  --card-bg: #ffffffcc; /* translucent for glass cards */
+  --radius-sm: .75rem;
+  --radius-lg: 2rem;
+
+  --shadow-y: 5px 15px 30px -10px rgba(0,0,0,.12);
+  --shadow-glass: 0 8px 32px rgba(0,0,0,.18);
+
+  --transition: .4s cubic-bezier(.4,.14,.3,1);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --card-bg: #161b22cc;
+    --shadow-y: 5px 15px 25px -10px rgba(0,0,0,.6);
+  }
+} */
+
+/* ---------- Global reset overrides ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary-dark);
+  color: #fff;
+}
+
+/* ---------- Utility classes ---------- */
+.container {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+.section {
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 1rem 2.4rem;
+  border-radius: 100vmax;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 4px 22px -4px var(--accent),
+    0 0 0 0 rgba(50,211,230,0.12);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.24s cubic-bezier(.4,.8,.3,1.1),
+    box-shadow 0.35s cubic-bezier(.3,.7,.2,1);
+  outline: none;
+  isolation: isolate;
+  /* Hiệu ứng “pulse” mặc định */
+  animation: btn-pulse 2.6s infinite cubic-bezier(.6,0,.7,1.2);
+}
+@keyframes btn-pulse {
+  0%, 100% { box-shadow: 0 4px 22px -4px var(--accent), 0 0 0 0 rgba(50,211,230,0.13);}
+  60% { box-shadow: 0 7px 32px -5px var(--accent), 0 0 0 14px rgba(50,211,230,0.08);}
+}
+
+@keyframes btn-shine-move {
+  0%   { left: -60%; opacity: 1; }
+  14%  { left: 120%; opacity: 1; }    /* shine xẹt cực nhanh qua nút */
+  15%  { left: 120%; opacity: 0; }    /* ẩn hoàn toàn */
+  100% { left: 120%; opacity: 0; }    /* giữ trạng thái ẩn tới hết chu kỳ */
+}
+
+
+/* SHINE sweep hiệu ứng ánh sáng chạy ngang */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -45%;
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0.16) 20%,
+    rgba(255,255,255,0.66) 55%,
+    rgba(255,255,255,0.07) 100%);
+  transform: skewX(-22deg);
+  pointer-events: none;
+  filter: blur(1px);
+  animation: btn-shine-move 1s cubic-bezier(.6,0,.8,1) infinite;  z-index: 1;
+}
+@keyframes btn-shine-move {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+
+/* Hover: nổi khối, sáng hơn, outline */
+.btn:hover, .btn:focus-visible {
+  transform: translateY(-4px) scale(1.045);
+  box-shadow:
+    0 12px 36px -8px var(--accent),
+    0 0 0 6px rgba(32,150,255,0.07),
+    0 0 10px 2px var(--primary);
+}
+.btn:active {
+  transform: scale(.96);
+  box-shadow:
+    0 3px 8px -4px var(--primary-dark),
+    0 0 0 0 rgba(32,150,255,0.08);
+}
+
+/* Ripple hiệu ứng gợn sóng khi click (chỉ với JS hoặc nếu thêm HTML phụ) */
+.btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background: rgba(255,255,255,0.4);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 3;
+}
+@keyframes ripple {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .4s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, var(--primary) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, var(--accent) 0%, transparent 65%);
+  animation: moveBg 8s linear infinite alternate;
+  z-index: -2;
+}
+
+@keyframes moveBg {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.4) translate(-10%, -8%); }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(120px); /* dreamy */
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg, rgba(0, 44, 98, 0.38) 0%,
+    rgba(0,0,0,0.56) 60%,
+    rgba(0,0,0,0.68) 100%
+  );
+}
+.hero-content, .hero h1, .hero p, .hero .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Montserrat', 'Poppins', 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem); /* min ≈ 19px, max ≈ 38px */
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  background: linear-gradient(90deg, #2596ff 20%, #32d3e6 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 8px rgba(0,0,0,.13);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.35),  /* bóng ngoài */
+    0 0px 2px #2596ff;           /* viền xanh nhạt tăng tương phản */
+  opacity: 1;
+  max-width: 740px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.01em;
+}
+
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px) saturate(130%);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform .6s ease, box-shadow .6s ease;
+}
+
+.card:hover {
+  transform: perspective(800px) rotateX(6deg) rotateY(-6deg) scale(1.03);
+  box-shadow: 0 15px 35px -10px rgba(0,0,0,.25);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(from 180deg at 50% 50%, var(--primary) 0%, var(--accent) 50%, transparent 100%);
+  filter: blur(14px);
+  z-index: -2;
+  transition: opacity .4s ease;
+  opacity: .3;
+}
+
+.card:hover::before { opacity: .55; }
+
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: .8rem;
+}
+
+.card p { color: var(--text-muted); }
+
+/* ---------- Section separators ---------- */
+.wave {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 4rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--primary-dark);
+  color: #f5faff;
+  padding: 4rem 0 2rem;
+}
+
+footer .grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+footer a { color: #f5faff; opacity: .8; text-decoration: none; transition: opacity .25s; }
+footer a:hover { opacity: 1; }
+
+footer .social {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ---------- Scroll reveal (simple) ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s ease var(--delay, .1s), transform .8s ease var(--delay, .1s);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Tiny script (vanilla) ---------- */
+@supports (animation-timeline: scroll()) {
+  /* Optional: parallax hero text using Scroll‑Timeline (Chrome 115+) */
+}
+/* End of WOW x2 Theme */

@@ -1,172 +1,178 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <meta charset="UTF-8">
+  <title>Trang chủ | ACE SKILLS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<title>Trang chủ | ACE SKILLS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Core styles -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/section.css">
+  <link rel="stylesheet" href="/css/goal.css">
+  <link rel="stylesheet" href="/css/card.css">
+  <link rel="stylesheet" href="/css/button.css">
+  <link rel="stylesheet" href="/css/swiper.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/wow-theme-index.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/css/header.css">
 
-<link rel="stylesheet" href="/css/variables.css">
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/hero.css">
-<link rel="stylesheet" href="/css/section.css">
-<link rel="stylesheet" href="/css/goal.css">
-<link rel="stylesheet" href="/css/card.css">
-<link rel="stylesheet" href="/css/button.css">
-<link rel="stylesheet" href="/css/swiper.css">
-<link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/form.css">
-<link rel="stylesheet" href="/css/responsive.css">
-
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
-<script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-<script defer src="/js/main.js"></script>
-<script src="/js/hero-bg-video.js"></script>
-<script src="/js/testimonial-swiper.js"></script>
-
+  <!-- Scripts -->
+  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script src="/js/hero-bg-video.js"></script>
+  <script src="/js/testimonial-swiper.js"></script>
+  <script src="/path/to/btn-ripple.js"></script>
 </head>
+
 <body>
 
-<header>
-  <nav class="container">
-    <div class="logo">ACE SKILLS</div>
-    <div>
-      <a href="/">Trang chủ</a>
+  <!-- ===== Header (đã đồng bộ với /courses) ===== -->
+  <header>
+    <nav class="container">
+      <div class="logo">ACE SKILLS</div>
+      <div>
+        <a href="/">Trang chủ</a>
+        <a href="/skills">Kỹ năng</a>
+        <a href="/courses">Khóa học</a>
+        <a href="/children">Trẻ em</a>
+        <a href="/donate">Donate</a>
+        <a href="/login">Đăng nhập</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" data-aos="fade-up">
+    <video class="hero-bg-video" autoplay muted playsinline id="heroBgVideo">
+      <source src="/video/video1.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>CHÌA KHÓA KỸ NĂNG - BỆ PHÓNG THÀNH CÔNG</h1>
+      <p>Nơi tổng hợp kiến thức, khóa học &amp; tài nguyên rèn luyện kỹ năng mềm, kỹ năng sống và tư duy hiện đại cho mọi người</p>
+      <a href="/courses" class="btn">Khám phá khóa học</a>
+    </div>
+  </section>
+
+  <!-- ===== Section: Mục tiêu chính ===== -->
+  <section class="section" data-aos="fade-up">
+    <h2>Mục tiêu chính</h2>
+    <div class="goal-row">
+      <div class="goal-text">
+        <p>
+          ACE SKILLS là nền tảng giáo dục kỹ năng mềm miễn phí, hướng tới mọi đối tượng – đặc biệt là trẻ em khó khăn, vùng sâu vùng xa.
+          Chúng tôi cung cấp các khoá học về giao tiếp, hợp tác, tư duy phản biện, quản lý cảm xúc, tự bảo vệ bản thân… với sự tham gia của giáo viên tình nguyện và chuyên gia giáo dục.
+          Mục tiêu của ACE SKILLS là thu hẹp khoảng cách cơ hội học tập, nâng cao chất lượng sống, đồng thời xây dựng một cộng đồng nhân văn và phát triển bền vững, nơi mọi trẻ em đều có quyền được học, phát triển toàn diện và lan tỏa yêu thương.
+        </p>
+      </div>
+      <div class="goal-img">
+        <img src="/image/image1.png" alt="Mục tiêu ACE SKILLS">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section: Khóa học nổi bật ===== -->
+  <section class="section" data-aos="fade-up">
+    <h2>Khóa học nổi bật</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x250/?communication" alt="Giao tiếp">
+        <h3>Giao tiếp tự tin</h3>
+        <p>Luyện tập nói trước đám đông và truyền đạt ý tưởng.</p>
+        <a href="/courses" class="btn">Bắt đầu</a>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x250/?teamwork" alt="Teamwork">
+        <h3>Làm việc nhóm hiệu quả</h3>
+        <p>Hiểu vai trò và phối hợp nhịp nhàng cùng đồng đội.</p>
+        <a href="/courses" class="btn">Bắt đầu</a>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/400x250/?creativity" alt="Creativity">
+        <h3>Tư duy sáng tạo</h3>
+        <p>Khơi gợi ý tưởng mới và giải quyết vấn đề linh hoạt.</p>
+        <a href="/courses" class="btn">Bắt đầu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section: Testimonial ===== -->
+  <section class="section testimonial-section" data-aos="fade-up">
+    <h2>Phản hồi của học viên</h2>
+    <div class="testimonial-swiper swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide testimonial-slide">
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="/image/avata1.png" alt="Lan, Lào Cai">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Khóa học giúp em tự tin hơn trong giao tiếp!"</p>
+              <div class="testimonial-name">— <strong>Lan, Lào Cai</strong></div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide testimonial-slide">
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="/image/avata2.png" alt="Minh, Kon Tum">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Em đã hợp tác với bạn bè tốt hơn sau khi học."</p>
+              <div class="testimonial-name">— <strong>Minh, Kon Tum</strong></div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide testimonial-slide">
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="/image/avata3.png" alt="Hòa, Đắk Lắk">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Kiến thức thật bổ ích và dễ hiểu."</p>
+              <div class="testimonial-name">— <strong>Hòa, Đắk Lắk</strong></div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide testimonial-slide">
+          <div class="testimonial-card">
+            <img class="testimonial-avatar" src="/image/avata4.png" alt="Jisoo, Hà Tĩnh">
+            <div class="testimonial-content">
+              <p class="testimonial-quote">"Kiến thức thật bổ ích và dễ hiểu."</p>
+              <div class="testimonial-name">— <strong>Hòa, Đắk Lắk</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper controls -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="col">
+      <h4>Liên hệ</h4>
+      <a href="mailto:hello@softskill4all.org">hello@softskill4all.org</a>
+      <a href="#">+84 123 456 789</a>
+    </div>
+    <div class="col">
+      <h4>Mạng xã hội</h4>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+    <div class="col">
+      <h4>Chương trình</h4>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
-      <a href="/children">Trẻ em</a>
-      <a href="/donate">Donate</a>
-      <a href="/login">Đăng nhập</a>
     </div>
-  </nav>
-</header>
-
-<section class="hero" data-aos="fade-up">
-  <video class="hero-bg-video" autoplay muted playsinline id="heroBgVideo">
-    <source src="/video/video1.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <h1>CHÌA KHÓA KỸ NĂNG - BỆ PHÓNG THÀNH CÔNG</h1>
-    <p>Nơi tổng hợp kiến thức, khóa học & tài nguyên rèn luyện kỹ năng mềm, kỹ năng sống và tư duy hiện đại cho mọi người</p>
-    <a href="/courses" class="btn">Khám phá khóa học</a>
-  </div>
-</section>
-
-<section class="section" data-aos="fade-up">
-  <h2>Mục tiêu chính</h2>
-  <div class="goal-row">
-    <div class="goal-text">
-      <p>
-        ACE SKILLS là nền tảng giáo dục kỹ năng mềm miễn phí, hướng tới mọi đối tượng – đặc biệt là trẻ em khó khăn, vùng sâu vùng xa.
-        Chúng tôi cung cấp các khoá học về giao tiếp, hợp tác, tư duy phản biện, quản lý cảm xúc, tự bảo vệ bản thân… với sự tham gia của giáo viên tình nguyện và chuyên gia giáo dục.
-        Mục tiêu của ACE SKILLS là thu hẹp khoảng cách cơ hội học tập, nâng cao chất lượng sống, đồng thời xây dựng một cộng đồng nhân văn và phát triển bền vững, nơi mọi trẻ em đều có quyền được học, phát triển toàn diện và lan tỏa yêu thương.
-      </p>
-    </div>
-    <div class="goal-img">
-      <img src="/image/image1.png" alt="Mục tiêu ACE SKILLS">
-    </div>
-  </div>
-</section>
-
-<section class="section" data-aos="fade-up">
-  <h2>Khóa học nổi bật</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?communication" alt="Giao tiếp">
-      <h3>Giao tiếp tự tin</h3>
-      <p>Luyện tập nói trước đám đông và truyền đạt ý tưởng.</p>
-      <a href="/courses" class="btn">Bắt đầu</a>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?teamwork" alt="Teamwork">
-      <h3>Làm việc nhóm hiệu quả</h3>
-      <p>Hiểu vai trò và phối hợp nhịp nhàng cùng đồng đội.</p>
-      <a href="/courses" class="btn">Bắt đầu</a>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?creativity" alt="Creativity">
-      <h3>Tư duy sáng tạo</h3>
-      <p>Khơi gợi ý tưởng mới và giải quyết vấn đề linh hoạt.</p>
-      <a href="/courses" class="btn">Bắt đầu</a>
-    </div>
-  </div>
-</section>
-
-<section class="section testimonial-section" data-aos="fade-up">
-  <h2>Phản hồi của học viên</h2>
-  <div class="testimonial-swiper swiper">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide testimonial-slide">
-        <div class="testimonial-card">
-          <img class="testimonial-avatar" src="/image/avata1.png" alt="Lisa, Cần Thơ">
-          <div class="testimonial-content">
-            <p class="testimonial-quote">"Khóa học giúp em tự tin hơn trong giao tiếp!"</p>
-            <div class="testimonial-name">— <strong>Lan, Lào Cai</strong></div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide testimonial-slide">
-        <div class="testimonial-card">
-          <img class="testimonial-avatar" src="/image/avata2.png" alt="Jennie, Hải Phòng">
-          <div class="testimonial-content">
-            <p class="testimonial-quote">"Em đã hợp tác với bạn bè tốt hơn sau khi học."</p>
-            <div class="testimonial-name">— <strong>Minh, Kon Tum</strong></div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide testimonial-slide">
-        <div class="testimonial-card">
-          <img class="testimonial-avatar" src="/image/avata3.png" alt="Roses, Đà Nẵng">
-          <div class="testimonial-content">
-            <p class="testimonial-quote">"Kiến thức thật bổ ích và dễ hiểu."</p>
-            <div class="testimonial-name">— <strong>Hòa, Đắk Lắk</strong></div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 4 -->
-      <div class="swiper-slide testimonial-slide">
-        <div class="testimonial-card">
-          <img class="testimonial-avatar" src="/image/avata4.png" alt="Jisoo, Hà Tĩnh">
-          <div class="testimonial-content">
-            <p class="testimonial-quote">"Kiến thức thật bổ ích và dễ hiểu."</p>
-            <div class="testimonial-name">— <strong>Hòa, Đắk Lắk</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Navigation & Pagination -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
-
-
-
-
-<footer>
-  <div class="col">
-    <h4>Liên hệ</h4>
-    <a href="mailto:hello@softskill4all.org">hello@softskill4all.org</a>
-    <a href="#">+84 123 456 789</a>
-  </div>
-  <div class="col">
-    <h4>Mạng xã hội</h4>
-    <a href="#">Facebook</a>
-    <a href="#">YouTube</a>
-  </div>
-  <div class="col">
-    <h4>Chương trình</h4>
-    <a href="/skills">Kỹ năng</a>
-    <a href="/courses">Khóa học</a>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
