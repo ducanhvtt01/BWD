@@ -581,12 +581,12 @@
 
 /* Enhanced Children's Course Card */
 .course-card.children {
-    border: 2px solid #FF6B6B;
-    background: linear-gradient(to bottom, #fff5f5 0%, white 100%);
+    border: 2px solid #2196f3;
+    background: linear-gradient(to bottom, #f5f9ff 0%, white 100%);
 }
 
 .course-card.children .card-tag {
-    background: #FF6B6B;
+    background: #2196f3;
     color: white;
     font-weight: 600;
     padding: 8px 16px;
@@ -595,7 +595,7 @@
     top: 12px;
     left: 12px;
     z-index: 2;
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
     transform-origin: left center;
     animation: pulseTag 2s infinite;
 }
@@ -613,24 +613,26 @@
 }
 
 .course-card.children .course-rating {
-    background: rgba(255, 107, 107, 0.1);
+    background: rgba(33, 150, 243, 0.1);
 }
 
 .course-card.children .btn {
-    background: #FF6B6B;
+    background: #2196f3;
+    color: white;
+    border: none;
 }
 
 .course-card.children .btn:hover {
-    background: #ff5252;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    background: #1976d2;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
 }
 
 .course-card.children .course-meta {
-    border-top: 1px solid rgba(255, 107, 107, 0.2);
+    border-top: 1px solid rgba(33, 150, 243, 0.2);
 }
 
 .course-card.children .course-meta i {
-    color: #FF6B6B;
+    color: #2196f3;
 }
 
 /* Enhanced Rating */
@@ -1075,13 +1077,17 @@
 
 /* Children Section Specific Styles */
 .children-section {
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,241,242,0.3) 100%);
+    background: #e3f2fd;
     padding: 60px 0;
     margin-top: 40px;
 }
 
 .children-section .section-header h2 {
-    color: #e11d48;
+    color: #1976d2;
+}
+
+.children-section .section-header p {
+    color: #2196f3;
 }
 
 .course-card.children {
@@ -1098,24 +1104,24 @@
 }
 
 .course-card.children .card-tag {
-    background: #ffe4e6;
-    color: #e11d48;
-    border-color: #fecdd3;
+    background: #e3f2fd;
+    color: #1976d2;
+    border-color: #90caf9;
     font-weight: 600;
 }
 
 .course-card.children .course-title {
-    color: #e11d48;
+    color: #1976d2;
 }
 
 .course-card.children .btn {
-    background: #e11d48;
+    background: #2196f3;
     color: white;
     border: none;
 }
 
 .course-card.children .btn:hover {
-    background: #be123c;
+    background: #1976d2;
     transform: translateY(-1px);
 }
 
@@ -1124,7 +1130,7 @@
 }
 
 .course-card.children .course-meta i {
-    color: #e11d48;
+    color: #2196f3;
 }
 
 /* Enhanced Course Grid */
@@ -1216,7 +1222,7 @@
 
 .children-section {
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,241,242,0.3) 100%);
-    padding: 60px 0;
+    padding: 30px 0;
     margin-top: 40px;
 }
 

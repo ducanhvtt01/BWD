@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     const itemsPerPage = 3;
 
+    // Xử lý phân trang cho khóa học trẻ em
+    let currentChildrenPage = 1;
+    const childrenCoursesPerPage = 3;
+
     // Hàm lọc và hiển thị khóa học
     function filterAndDisplayCourses() {
         console.log('Filtering courses with:', {
@@ -249,4 +253,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Khởi tạo ban đầu
     filterAndDisplayCourses();
+
+    // Hàm khởi tạo phân trang khóa học trẻ em
+    function initializeChildrenCourses() {
+        const childrenCourses = document.querySelectorAll('.children-courses .course-card');
+        childrenCourses.forEach(course => {
+            course.style.display = 'none';
+        });
+        
+        // Hiển thị 3 khóa học đầu tiên
+        for(let i = 0; i < childrenCoursesPerPage; i++) {
+            if(childrenCourses[i]) {
+                childrenCourses[i].style.display = 'block';
+            }
+        }
+    }
+
+    // Hàm xử lý chuyển trang cho khóa học trẻ em
+    window.changeChildrenPage = function(page) {
+        const childrenCourses = document.querySelectorAll('.children-courses .course-card');
+        const paginationButtons = document.querySelectorAll('.children-pagination .pagination-button:not(:first-child):not(:last-child)');
+        const totalPages = Math.ceil(childrenCourses.length / childrenCoursesPerPage);
+        
+        // Xử lý nút prev và next
+        if (page === 'prev') {
+            if (currentChildrenPage > 1) {
+                currentChildrenPage--;
+            }
+        } else if (page === 'next') {
+            if (currentChildrenPage < totalPages) {
+                currentChildrenPage++;
+            }
+        } else {
+            currentChildrenPage = parseInt(page);
+        }
+
+        // Ẩn tất cả khóa học
+        childrenCourses.forEach(course => {
+            course.style.display = 'none';
+        });
+
+        // Hiển thị khóa học của trang hiện tại
+        const start = (currentChildrenPage - 1) * childrenCoursesPerPage;
+        const end = start + childrenCoursesPerPage;
+        for(let i = start; i < end; i++) {
+            if(childrenCourses[i]) {
+                childrenCourses[i].style.display = 'block';
+            }
+        }
+
+        // Cập nhật trạng thái active cho các nút phân trang
+        paginationButtons.forEach(button => {
+            button.classList.remove('active');
+            if (button.textContent == currentChildrenPage) {
+                button.classList.add('active');
+            }
+        });
+
+        // Cập nhật trạng thái nút prev/next
+        const prevButton = document.querySelector('.children-pagination .pagination-button:first-child');
+        const nextButton = document.querySelector('.children-pagination .pagination-button:last-child');
+        
+        prevButton.classList.toggle('disabled', currentChildrenPage === 1);
+        nextButton.classList.toggle('disabled', currentChildrenPage === totalPages);
+    };
+
+    // Khởi tạo phân trang khi trang web được tải
+    initializeChildrenCourses();
 }); 
