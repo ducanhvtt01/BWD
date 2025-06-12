@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Trang chủ | ACESKILLS</title>
+<title>Trang chủ | ACE SKILLS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="/css/variables.css">
@@ -24,13 +24,15 @@
 <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 <script defer src="/js/main.js"></script>
+<script src="/js/hero-bg-video.js"></script>
+<script src="/js/testimonial-swiper.js"></script>
 
 </head>
 <body>
 
 <header>
   <nav class="container">
-    <div class="logo">ACESKILLS</div>
+    <div class="logo">ACE SKILLS</div>
     <div>
       <a href="/">Trang chủ</a>
       <a href="/skills">Kỹ năng</a>
@@ -43,10 +45,14 @@
 </header>
 
 <section class="hero" data-aos="fade-up">
-  <h1>Chìa khóa kỹ năng – Bệ phóng thành công</h1>
-  <p>Nơi tổng hợp kiến thức, khóa học & tài nguyên rèn luyện kỹ năng mềm, kỹ năng sống và tư duy hiện đại cho mọi người</p>
-  <a href="/courses" class="btn">Khám phá khóa học</a>
-  <svg class="wave" viewBox="0 0 1440 320"><path fill="#f0f8ff" fill-opacity="1" d="M0,224L40,197.3C80,171,160,117,240,112C320,107,400,149,480,181.3C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,160C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+  <video class="hero-bg-video" autoplay muted playsinline id="heroBgVideo">
+    <source src="/video/video1.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>CHÌA KHÓA KỸ NĂNG - BỆ PHÓNG THÀNH CÔNG</h1>
+    <p>Nơi tổng hợp kiến thức, khóa học & tài nguyên rèn luyện kỹ năng mềm, kỹ năng sống và tư duy hiện đại cho mọi người</p>
+    <a href="/courses" class="btn">Khám phá khóa học</a>
+  </div>
 </section>
 
 <section class="section" data-aos="fade-up">
@@ -60,7 +66,7 @@
       </p>
     </div>
     <div class="goal-img">
-      <img src="/a559bc44-8006-4716-96d3-c4889d0e4d94.png" alt="Mục tiêu ACE SKILLS">
+      <img src="/image/image1.png" alt="Mục tiêu ACE SKILLS">
     </div>
   </div>
 </section>
@@ -89,26 +95,59 @@
   </div>
 </section>
 
-<section class="section" data-aos="fade-up">
+<section class="section testimonial-section" data-aos="fade-up">
   <h2>Phản hồi của học viên</h2>
-  <div class="swiper">
+  <div class="testimonial-swiper swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <p>"Khóa học giúp em tự tin hơn trong giao tiếp!"</p>
-        <span>— Lan, Lào Cai</span>
+      <!-- Slide 1 -->
+      <div class="swiper-slide testimonial-slide">
+        <div class="testimonial-card">
+          <img class="testimonial-avatar" src="/image/avata1.png" alt="Lisa, Cần Thơ">
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"Khóa học giúp em tự tin hơn trong giao tiếp!"</p>
+            <div class="testimonial-name">— <strong>Lan, Lào Cai</strong></div>
+          </div>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <p>"Em đã hợp tác với bạn bè tốt hơn sau khi học."</p>
-        <span>— Minh, Kon Tum</span>
+      <!-- Slide 2 -->
+      <div class="swiper-slide testimonial-slide">
+        <div class="testimonial-card">
+          <img class="testimonial-avatar" src="/image/avata2.png" alt="Jennie, Hải Phòng">
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"Em đã hợp tác với bạn bè tốt hơn sau khi học."</p>
+            <div class="testimonial-name">— <strong>Minh, Kon Tum</strong></div>
+          </div>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <p>"Kiến thức thật bổ ích và dễ hiểu."</p>
-        <span>— Hòa, Đắk Lắk</span>
+      <!-- Slide 3 -->
+      <div class="swiper-slide testimonial-slide">
+        <div class="testimonial-card">
+          <img class="testimonial-avatar" src="/image/avata3.png" alt="Roses, Đà Nẵng">
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"Kiến thức thật bổ ích và dễ hiểu."</p>
+            <div class="testimonial-name">— <strong>Hòa, Đắk Lắk</strong></div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide testimonial-slide">
+        <div class="testimonial-card">
+          <img class="testimonial-avatar" src="/image/avata4.png" alt="Jisoo, Hà Tĩnh">
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"Kiến thức thật bổ ích và dễ hiểu."</p>
+            <div class="testimonial-name">— <strong>Hòa, Đắk Lắk</strong></div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Navigation & Pagination -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
     <div class="swiper-pagination"></div>
   </div>
 </section>
+
+
 
 
 <footer>

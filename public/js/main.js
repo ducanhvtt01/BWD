@@ -54,3 +54,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     filterSelect.addEventListener('change', filterCourses);
   }
 });
+
+

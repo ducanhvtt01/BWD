@@ -1,15 +1,80 @@
+/* ---------- HERO WRAPPER (giữ nguyên) ---------- */
 .hero{
+  width:100%;
+  height:42.5vw;
+  max-height:90vh;
   position:relative;
   overflow:hidden;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
   text-align:center;
-  padding:120px 20px 160px;
-  background:linear-gradient(135deg,#d7eaff 0%,var(--primary) 100%);
+  padding:0 24px;
+  box-sizing:border-box;
 }
-.hero h1{ font-size:3rem; font-weight:700; }
-.hero p{ font-size:1.1rem; max-width:600px; }
-/* Decorative wave */
-.wave{ position:absolute; bottom:0; left:0; width:100%; }
+
+.hero-bg-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  pointer-events:none;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  z-index:1;
+}
+
+/* ---------- KHỐI CHỮ ---------- */
+.hero-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:24px;
+  max-width:1400px;
+}
+
+/* TIÊU ĐỀ VỪA PHẢI */
+.hero h1 {
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem); /* min ≈ 19px, max ≈ 38px */
+  font-weight: 750;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0;
+}
+
+
+/* MÔ TẢ VỪA PHẢI */
+.hero p{
+  /* min ≈ 20 px –  max ≈ 28 px */
+  font-size:clamp(1.25rem, 2.2vw + 0.4rem, 1.75rem);
+  font-weight: 600;
+  color:#eaeaea;
+  margin:0;
+  max-width:840px;
+}
+
+/* NÚT CTA VỪA PHẢI */
+.btn{
+  display:inline-block;
+  background:var(--primary-dark);
+  color:#fff;
+  padding:16px 48px;
+  font-size:1.1rem;   /* ≈ 18 px */
+  border-radius:56px;
+  font-weight:600;
+  transition:transform .25s, box-shadow .25s;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}

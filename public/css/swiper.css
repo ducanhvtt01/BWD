@@ -1,4 +1,113 @@
-.swiper{ width:100%; padding:40px 0;}
-.swiper-slide{ background:var(--white); border-radius:20px; padding:32px 24px; box-shadow:0 6px 24px rgba(0,0,0,.05); max-width:600px; margin:auto; text-align:center;}
-.swiper-slide p{ font-style:italic; margin-bottom:12px;}
-.swiper-slide span{ font-weight:600;}
+/* =====================================================
+   SWIPER – TESTIMONIAL SECTION  (ACE SKILLS) – v7-pro
+   ===================================================== */
+.testimonial-section{
+  background:var(--section-bg-light,#f2fbff);
+  padding:60px 0;
+}
+
+/* ---------- heading ---------- */
+.testimonial-section h2{
+  font-size:2.2rem;
+  font-weight:800;
+  text-align:center;
+  color:#123456;
+  margin-bottom:40px;
+}
+
+/* ---------- container ---------- */
+.testimonial-swiper{
+  width:100%;
+  max-width:640px;
+  margin:0 auto;
+  padding:10px 0 64px;
+  position:relative;
+}
+
+/* ---------- slide ---------- */
+.testimonial-slide{
+  width:100%!important;
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+}
+
+/* ---------- card ---------- */
+.testimonial-card{
+  width:100%;
+  background:#fff;
+  border-radius:24px;
+  padding:40px 32px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.testimonial-avatar{
+  flex-shrink:0;
+  width:86px;height:86px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #fff;
+  box-shadow:0 0 0 4px var(--primary,#2471ff);
+}
+
+.testimonial-content{flex:1;}
+
+.testimonial-quote{
+  font-size:1.1rem;
+  font-style:italic;
+  color:#0f172a;
+  margin:0 0 12px;
+  line-height:1.45;
+}
+
+.testimonial-name{
+  font-size:1rem;
+  font-weight:700;
+  color:var(--primary,#2471ff);
+}
+
+/* ---------- custom bullets ---------- */
+.testimonial-swiper .bullet{
+  display:inline-block;
+  width:10px;height:10px;
+  border-radius:50%;
+  background:#cbd5e1;
+  margin:0 4px;
+  transition:background .25s;
+  cursor:pointer;
+}
+
+.testimonial-swiper .bullet--active{
+  background:var(--primary,#2471ff);
+}
+
+/* ---------- arrows ---------- */
+.testimonial-section .swiper-button-prev,
+.testimonial-section .swiper-button-next{
+  color:var(--primary,#2471ff);
+  width:44px;height:44px;
+  top:50%;transform:translateY(-50%);
+}
+
+.testimonial-section .swiper-button-prev{left:-70px;}
+.testimonial-section .swiper-button-next{right:-70px;}
+
+.testimonial-section .swiper-button-prev::after,
+.testimonial-section .swiper-button-next::after{
+  font-size:24px;
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:768px){
+  .testimonial-card{
+    flex-direction:column;
+    text-align:center;
+    padding:32px 28px;
+  }
+  .testimonial-avatar{margin-bottom:18px;}
+  .testimonial-section .swiper-button-prev{left:8px;}
+  .testimonial-section .swiper-button-next{right:8px;}
+}
