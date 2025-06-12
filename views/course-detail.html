@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết khóa học | SoftSkill4All</title>
+    
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/course-detail.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script defer src="/js/course-detail.js"></script>
+</head>
+<body>
+    <div class="page-transition"></div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">SoftSkill4All</div>
+            <div>
+                <a href="/">Trang chủ</a>
+                <a href="/skills">Kỹ năng</a>
+                <a href="/courses">Khóa học</a>
+                <a href="/children">Trẻ em</a>
+                <a href="/donate">Donate</a>
+                <a href="/login">Đăng nhập</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="container">
+            <div class="course-hero-content">
+                <div class="course-info">
+                    <div class="course-tags">
+                        <span class="tag primary">Kỹ năng giao tiếp</span>
+                        <span class="tag success">Người mới bắt đầu</span>
+                    </div>
+                    <h1>Giao tiếp tự tin cho trẻ em</h1>
+                    <div class="course-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <span>(234 đánh giá)</span>
+                        </div>
+                        <div class="students">
+                            <i class="fas fa-users"></i>
+                            <span>1,234 học viên</span>
+                        </div>
+                        <div class="last-updated">
+                            <i class="fas fa-clock"></i>
+                            <span>Cập nhật 01/03/2024</span>
+                        </div>
+                    </div>
+                    <p class="course-description">
+                        Khóa học giúp trẻ phát triển kỹ năng giao tiếp tự tin, xây dựng các mối quan hệ và phát triển kỹ năng xã hội từ sớm.
+                    </p>
+                </div>
+                <div class="course-preview">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/demo-video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="course-card">
+                        <button class="btn-enroll">Tham gia học ngay</button>
+                        <div class="course-features">
+                            <div class="feature">
+                                <i class="fas fa-play-circle"></i>
+                                <span>12 bài giảng</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <span>15 giờ học</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-infinity"></i>
+                                <span>Học trọn đời</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-certificate"></i>
+                                <span>Chứng chỉ hoàn thành</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="course-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <!-- What You'll Learn -->
+                    <div class="section-box what-youll-learn">
+                        <h2>Bạn sẽ học được gì?</h2>
+                        <div class="learning-points">
+                            <div class="point">
+                                <i class="fas fa-check"></i>
+                                <span>Phát triển sự tự tin khi giao tiếp</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check"></i>
+                                <span>Kỹ năng lắng nghe và thấu hiểu</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check"></i>
+                                <span>Xây dựng mối quan hệ tích cực</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check"></i>
+                                <span>Phát triển ngôn ngữ cơ thể hiệu quả</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Curriculum -->
+                    <div class="section-box curriculum">
+                        <h2>Nội dung khóa học</h2>
+                        <div class="curriculum-list">
+                            <div class="curriculum-section">
+                                <div class="section-header" onclick="toggleSection(this)">
+                                    <h3>Phần 1: Giới thiệu</h3>
+                                    <span class="duration">3 bài học • 45 phút</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="section-content">
+                                    <div class="lesson">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>1.1 Tổng quan về khóa học</span>
+                                        <span class="duration">15 phút</span>
+                                    </div>
+                                    <div class="lesson">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>1.2 Tầm quan trọng của giao tiếp</span>
+                                        <span class="duration">15 phút</span>
+                                    </div>
+                                    <div class="lesson">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>1.3 Đánh giá kỹ năng ban đầu</span>
+                                        <span class="duration">15 phút</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More sections... -->
+                        </div>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="section-box instructor">
+                        <h2>Giảng viên</h2>
+                        <div class="instructor-profile">
+                            <img src="/images/instructor.jpg" alt="Giảng viên">
+                            <div class="instructor-info">
+                                <h3>TS. Nguyễn Văn A</h3>
+                                <p class="title">Chuyên gia Tâm lý Trẻ em</p>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8 Đánh giá</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fas fa-user-graduate"></i>
+                                        <span>12,345 Học viên</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>15 Khóa học</span>
+                                    </div>
+                                </div>
+                                <p class="bio">
+                                    Tiến sĩ Tâm lý học với hơn 15 năm kinh nghiệm trong lĩnh vực phát triển kỹ năng cho trẻ em. 
+                                    Tác giả của nhiều cuốn sách về giáo dục và phát triển trẻ em.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="section-box reviews">
+                        <h2>Đánh giá từ học viên</h2>
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="average-rating">
+                                    <span class="number">4.8</span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="total-ratings">234 đánh giá</span>
+                                </div>
+                                <div class="rating-bars">
+                                    <div class="rating-bar">
+                                        <span class="stars">5 sao</span>
+                                        <div class="bar-container">
+                                            <div class="bar" style="width: 80%"></div>
+                                        </div>
+                                        <span class="percentage">80%</span>
+                                    </div>
+                                    <!-- More rating bars... -->
+                                </div>
+                            </div>
+                            <div class="reviews-list">
+                                <div class="review">
+                                    <div class="review-header">
+                                        <img src="/images/avatar1.jpg" alt="Học viên">
+                                        <div class="reviewer-info">
+                                            <h4>Nguyễn Thị B</h4>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="review-date">01/03/2024</span>
+                                        </div>
+                                    </div>
+                                    <p class="review-content">
+                                        Khóa học rất bổ ích, con tôi đã tự tin hơn rất nhiều trong giao tiếp. 
+                                        Giảng viên nhiệt tình và phương pháp giảng dạy dễ hiểu.
+                                    </p>
+                                </div>
+                                <!-- More reviews... -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="col">
+            <h4>Liên hệ</h4>
+            <a href="mailto:hello@softskill4all.org">hello@softskill4all.org</a>
+            <a href="#">+84 123 456 789</a>
+        </div>
+        <div class="col">
+            <h4>Mạng xã hội</h4>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+        </div>
+        <div class="col">
+            <h4>Chương trình</h4>
+            <a href="/skills">Kỹ năng</a>
+            <a href="/courses">Khóa học</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseInfo = JSON.parse(sessionStorage.getItem('selectedCourse'));
+            if (courseInfo) {
+                // Update page title
+                document.title = courseInfo.title + ' | SoftSkill4All';
+                
+                // Update course information
+                document.querySelector('.course-info h1').textContent = courseInfo.title;
+                document.querySelector('.course-description').textContent = courseInfo.description;
+                document.querySelector('.rating span:first-child').textContent = courseInfo.rating;
+                
+                // Update course tags based on audience and category
+                const tagsContainer = document.querySelector('.course-tags');
+                tagsContainer.innerHTML = ''; // Clear existing tags
+                
+                // Add primary category tag
+                const categoryTag = document.createElement('span');
+                categoryTag.className = 'tag primary';
+                categoryTag.textContent = courseInfo.category;
+                tagsContainer.appendChild(categoryTag);
+                
+                // Check if course is for children
+                const isChildrenCourse = courseInfo.isChildrenCourse || 
+                                      courseInfo.category === 'Dành cho trẻ em' ||
+                                      courseInfo.title.toLowerCase().includes('trẻ em') ||
+                                      courseInfo.title.toLowerCase().includes('cho trẻ');
+                
+                // Add "Trẻ em" tag for children's courses
+                if (isChildrenCourse) {
+                    const childrenTag = document.createElement('span');
+                    childrenTag.className = 'tag secondary';
+                    childrenTag.textContent = 'Trẻ em';
+                    tagsContainer.appendChild(childrenTag);
+                }
+                
+                // Add level tag
+                const levelTag = document.createElement('span');
+                levelTag.className = 'tag success';
+                levelTag.textContent = courseInfo.level === 'beginner' ? 'Người mới bắt đầu' : 
+                                     courseInfo.level === 'intermediate' ? 'Trung cấp' : 'Nâng cao';
+                tagsContainer.appendChild(levelTag);
+                
+                // Update meta information
+                const durationText = courseInfo.duration;
+                const lessonsText = courseInfo.lessons;
+                document.querySelector('.feature:nth-child(1) span').textContent = lessonsText;
+                document.querySelector('.feature:nth-child(2) span').textContent = durationText;
+            }
+        });
+
+        // Toggle curriculum sections
+        function toggleSection(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.fa-chevron-down');
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            icon.style.transform = content.style.display === 'none' ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        // Initialize AOS
+        AOS.init();
+    </script>
+</body>
+</html> 

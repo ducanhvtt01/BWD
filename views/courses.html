@@ -26,8 +26,117 @@
 <script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 <script defer src="/js/main.js"></script>
 <script defer src="/js/courses.js"></script>
+<script>
+// Page transition handling
+document.addEventListener('DOMContentLoaded', function() {
+    const transitionElement = document.querySelector('.page-transition');
+    
+    // Handle all link clicks including course buttons
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && !link.hasAttribute('data-no-transition')) {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            
+            // Don't transition for external links or anchors
+            if (href.startsWith('http') || href.startsWith('#')) {
+                window.location.href = href;
+                return;
+            }
+            
+            // Add transition classes
+            document.body.classList.add('transitioning');
+            transitionElement.classList.add('active');
+            
+            // Navigate after transition
+            setTimeout(() => {
+                // For course links, redirect to course-detail.html with course info
+                if (href.startsWith('/course/')) {
+                    // Get course information from the card
+                    const courseCard = link.closest('.course-card');
+                    const courseInfo = {
+                        title: courseCard.querySelector('.course-title').textContent,
+                        description: courseCard.querySelector('.course-desc').textContent,
+                        rating: courseCard.querySelector('.course-rating span').textContent,
+                        category: courseCard.querySelector('.card-tag').textContent,
+                        duration: courseCard.querySelector('.course-meta span:first-child').textContent,
+                        lessons: courseCard.querySelector('.course-meta span:last-child').textContent,
+                        level: courseCard.dataset.level || 'beginner',
+                        isChildrenCourse: courseCard.querySelector('.card-tag').textContent === 'Dành cho trẻ em' || 
+                                        courseCard.closest('.children-courses') !== null || 
+                                        courseCard.classList.contains('children')
+                    };
+                    
+                    // Store course info in sessionStorage
+                    sessionStorage.setItem('selectedCourse', JSON.stringify(courseInfo));
+                    window.location.href = '/course-detail.html';
+                } else {
+                    window.location.href = href;
+                }
+            }, 500);
+        }
+    });
+});
+
+// Handle page load
+window.addEventListener('load', function() {
+    const transitionElement = document.querySelector('.page-transition');
+    document.body.classList.remove('transitioning');
+    transitionElement.classList.remove('active');
+});
+
+// Handle back/forward navigation
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        const transitionElement = document.querySelector('.page-transition');
+        document.body.classList.remove('transitioning');
+        transitionElement.classList.remove('active');
+    }
+});
+
+// Filter functionality
+function filterCourses() {
+    const audience = document.getElementById('audience-filter').value;
+    const level = document.getElementById('level-filter').value;
+    const duration = document.getElementById('duration-filter').value;
+    const rating = document.getElementById('rating-filter').value;
+
+    const courses = document.querySelectorAll('.course-card');
+
+    courses.forEach(course => {
+        const courseAudience = course.dataset.audience;
+        const courseLevel = course.dataset.level;
+        const courseDuration = parseInt(course.dataset.duration);
+        const courseRating = parseFloat(course.dataset.rating);
+
+        let show = true;
+
+        if (audience !== 'all' && courseAudience !== audience) show = false;
+        if (level !== 'all' && courseLevel !== level) show = false;
+        
+        if (duration !== 'all') {
+            const [min, max] = duration.split('-').map(Number);
+            if (max && (courseDuration < min || courseDuration > max)) show = false;
+            if (!max && courseDuration <= min) show = false;
+        }
+
+        if (rating !== 'all' && courseRating < parseFloat(rating)) show = false;
+
+        course.style.display = show ? 'block' : 'none';
+    });
+}
+
+// Add event listeners to filters
+document.querySelectorAll('select').forEach(select => {
+    select.addEventListener('change', filterCourses);
+});
+
+// Initialize AOS
+AOS.init();
+</script>
 </head>
 <body>
+<div class="page-transition"></div>
 
 <header>
   <nav class="container">
@@ -55,7 +164,7 @@
       <div class="search-input-wrapper">
         <i class="fas fa-search"></i>
         <input type="text" class="search-input" placeholder="Tìm kiếm nội dung bất kỳ">
-      </div>
+  </div>
     </div>
 
     <div class="category-pills">
@@ -84,7 +193,7 @@
     </div>
 
     <div class="courses-grid">
-        <div class="course-card communication" data-date="2024-03-10" data-rating="4.5">
+        <div class="course-card communication" data-date="2024-03-10" data-rating="4.5" data-audience="children" data-level="beginner" data-duration="15">
             <div class="card-tag">Kỹ năng giao tiếp</div>
             <div class="course-image">
                 <img src="/images/courses/communication.jpg" alt="Giao tiếp tự tin">
@@ -101,11 +210,11 @@
                     <span><i class="fas fa-clock"></i> 15 giờ</span>
                     <span><i class="fas fa-book-open"></i> 12 bài học</span>
                 </div>
-                <a href="/course/giao-tiep-tu-tin" class="btn">Học ngay</a>
+                <a href="/course/giao-tiep-tu-tin" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
-        <div class="course-card leadership" data-date="2024-03-08" data-rating="4.8">
+        <div class="course-card leadership" data-date="2024-03-08" data-rating="4.8" data-audience="adult" data-level="intermediate" data-duration="20">
             <div class="card-tag">Kỹ năng lãnh đạo</div>
             <div class="course-image">
                 <img src="/images/courses/leadership.jpg" alt="Nghệ thuật lãnh đạo">
@@ -122,11 +231,11 @@
                     <span><i class="fas fa-clock"></i> 20 giờ</span>
                     <span><i class="fas fa-book-open"></i> 15 bài học</span>
                 </div>
-                <a href="/course/nghe-thuat-lanh-dao" class="btn">Học ngay</a>
+                <a href="/course/nghe-thuat-lanh-dao" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
-        <div class="course-card business" data-date="2024-03-05" data-rating="4.0">
+        <div class="course-card business" data-date="2024-03-05" data-rating="4.0" data-audience="adult" data-level="beginner" data-duration="25">
             <div class="card-tag">Kinh doanh</div>
             <div class="course-image">
                 <img src="/images/courses/business.jpg" alt="Khởi nghiệp kinh doanh">
@@ -143,7 +252,7 @@
                     <span><i class="fas fa-clock"></i> 25 giờ</span>
                     <span><i class="fas fa-book-open"></i> 18 bài học</span>
                 </div>
-                <a href="/course/khoi-nghiep-kinh-doanh" class="btn">Học ngay</a>
+                <a href="/course/khoi-nghiep-kinh-doanh" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
@@ -239,7 +348,7 @@
                     <span><i class="fas fa-clock"></i> 10 giờ</span>
                     <span><i class="fas fa-book-open"></i> 8 bài học</span>
                 </div>
-                <a href="/course/ky-nang-xa-hoi-tre-em" class="btn">Học ngay</a>
+                <a href="/course/ky-nang-xa-hoi-tre-em" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
@@ -263,7 +372,7 @@
                     <span><i class="fas fa-clock"></i> 12 giờ</span>
                     <span><i class="fas fa-book-open"></i> 10 bài học</span>
                 </div>
-                <a href="/course/tu-duy-sang-tao-tre-em" class="btn">Học ngay</a>
+                <a href="/course/tu-duy-sang-tao-tre-em" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
@@ -287,7 +396,7 @@
                     <span><i class="fas fa-clock"></i> 15 giờ</span>
                     <span><i class="fas fa-book-open"></i> 12 bài học</span>
                 </div>
-                <a href="/course/tieng-anh-tre-em" class="btn">Học ngay</a>
+                <a href="/course/tieng-anh-tre-em" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
@@ -311,7 +420,7 @@
                     <span><i class="fas fa-clock"></i> 20 giờ</span>
                     <span><i class="fas fa-book-open"></i> 15 bài học</span>
                 </div>
-                <a href="/course/am-nhac-tre-em" class="btn">Học ngay</a>
+                <a href="/course/am-nhac-tre-em" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
@@ -335,7 +444,7 @@
                     <span><i class="fas fa-clock"></i> 18 giờ</span>
                     <span><i class="fas fa-book-open"></i> 14 bài học</span>
                 </div>
-                <a href="/course/khoa-hoc-vui-tre-em" class="btn">Học ngay</a>
+                <a href="/course/khoa-hoc-vui-tre-em" class="btn-learn">Học ngay</a>
             </div>
         </div>
 
@@ -359,7 +468,7 @@
                     <span><i class="fas fa-clock"></i> 16 giờ</span>
                     <span><i class="fas fa-book-open"></i> 12 bài học</span>
                 </div>
-                <a href="/course/nghe-thuat-tre-em" class="btn">Học ngay</a>
+                <a href="/course/nghe-thuat-tre-em" class="btn-learn">Học ngay</a>
             </div>
         </div>
     </div>
