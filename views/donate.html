@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
 <meta charset="UTF-8">
 <title>Donate | ACE SKILLS</title>
 <!-- SEO Meta Tags -->
@@ -21,127 +20,130 @@
 <meta name="twitter:image" content="https://spendwise.id.vn/image/image1.png">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" href="/css/variables.css">
 <link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/hero.css">
-<link rel="stylesheet" href="/css/section.css">
-<link rel="stylesheet" href="/css/goal.css">
-<link rel="stylesheet" href="/css/card.css">
-<link rel="stylesheet" href="/css/button.css">
-<link rel="stylesheet" href="/css/swiper.css">
+  <link rel="stylesheet" href="/css/header.css">
 <link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/form.css">
-<link rel="stylesheet" href="/css/responsive.css">
-<link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/wow-theme-index.css">
-
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
-<script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-<script defer src="/js/main.js"></script>
-
-</head>
-<body>
-
+  <link rel="stylesheet" href="/css/donate.css">
+  <link rel="stylesheet" href="/css/wow-theme-index.css">
   <style>
     body { margin-top: 72px; }
     @media (max-width: 768px) { body { margin-top: 64px; } }
   </style>
-
+</head>
+<body>
 <header>
   <nav class="container">
-    <div class="logo text-gradient">ACE SKILLS</div>
+      <div class="logo text-gradient">ACE SKILLS</div>
     <div>
       <a href="/">Trang chủ</a>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
-      <a href="/children" data-no-transition>Trẻ em</a>
+        <a href="/children" data-no-transition>Trẻ em</a>
       <a href="/donate">Donate</a>
       <a href="/login">Đăng nhập</a>
     </div>
   </nav>
 </header>
 
+  <main class="donate-main">
+    <div class="tab-btns">
+      <button class="tab-btn active" onclick="showTab('web')">Quyên góp duy trì web</button>
+      <button class="tab-btn" onclick="showTab('charity')">Quyên góp thiện nguyện</button>
+    </div>
 
-<section class="hero" data-aos="fade-up">
-  <h1>Ủng hộ chúng tôi</h1>
-  <p>Góp phần mở rộng cơ hội học tập cho trẻ em khó khăn.</p>
-  <svg class="wave" viewBox="0 0 1440 320"><path fill="#f0f8ff" fill-opacity="1" d="M0,224L40,197.3C80,171,160,117,240,112C320,107,400,149,480,181.3C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,160C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-</section>
-
-<section class="section" data-aos="fade-up">
-  <form class="container">
-    <label>Số tiền ủng hộ (VND)</label>
-    <input type="number" placeholder="Nhập số tiền...">
+    <!-- Quyên góp duy trì web -->
+    <div class="donate-section" id="tab-web">
+      <div class="donate-title">1. Quyên góp tự nguyện duy trì website</div>
+      <div class="donate-account">
+        <b>Thông tin tài khoản nhận quyên góp:</b><br>
+        Chủ tài khoản: Nguyễn Văn A<br>
+        Số tài khoản: 123456789<br>
+        Ngân hàng: Vietcombank (VCB) - CN Hà Nội<br>
+        Nội dung chuyển khoản: <b>"Ho ten - Duy tri web"</b>
+      </div>
+      <div style="text-align:center;margin-bottom:18px;">
+        <img src="/img/qr-web.png" alt="QR duy trì web" style="width:160px;height:160px;border-radius:16px;box-shadow:0 2px 8px #b3e5fc;">
+        <div style="color:#1761a0;font-size:0.98rem;margin-top:6px;">Quét mã QR để chuyển khoản duy trì web</div>
+      </div>
+      <form class="donate-form">
     <label>Họ và tên</label>
     <input type="text" placeholder="Nhập họ tên...">
     <label>Email</label>
     <input type="email" placeholder="Nhập email...">
-    <button type="submit" class="btn">Ủng hộ ngay</button>
+        <label>Số tiền (VND)</label>
+        <input type="number" placeholder="Nhập số tiền...">
+        <label>Lời nhắn (không bắt buộc)</label>
+        <input type="text" placeholder="Lời nhắn...">
+        <button type="submit" class="btn">Quyên góp duy trì web</button>
   </form>
-</section>
+      <div>
+        <b>Công khai quyên góp duy trì web:</b>
+        <table class="donate-table">
+          <tr><th>Họ tên</th><th>Số tiền (VND)</th><th>Lời nhắn</th><th>Thời gian</th></tr>
+          <tr><td>Nguyễn Văn B</td><td>200,000</td><td>Ủng hộ web phát triển!</td><td>01/06/2024</td></tr>
+          <tr><td>Ẩn danh</td><td>100,000</td><td></td><td>30/05/2024</td></tr>
+        </table>
+      </div>
+    </div>
 
-<!-- Quyên góp thiện nguyện -->
-<div class="donate-section" id="tab-charity" style="display:none">
-  <div class="donate-title">2. Quyên góp thiện nguyện</div>
-  <div class="donate-campaigns">
-    <div class="campaign-card" data-campaign="Áo ấm cho em">
-      <img src="/images/campaign1.jpg" alt="Áo ấm cho em">
-      <div class="campaign-info">
-        <h3>Áo ấm cho em</h3>
-        <p>Chung tay mang đến những chiếc áo ấm cho trẻ em vùng cao trong mùa đông giá rét.</p>
-        <button class="btn campaign-donate-btn" onclick="selectCampaign('Áo ấm cho em')">Ủng hộ</button>
-        <div class="campaign-total">Đã quyên góp: <b>12,000,000 VND</b></div>
+    <!-- Quyên góp thiện nguyện -->
+    <div class="donate-section" id="tab-charity" style="display:none">
+      <div style="text-align:center;margin-bottom:32px;">
+        <h2 style="color:#ff6600;font-size:2.1rem;font-weight:800;margin-bottom:18px;">Danh sách chiến dịch gây quỹ</h2>
+        <div class="donate-campaigns-tabs">
+          <span class="tab active">Tất cả</span>
+          <span class="tab">Tổ chức</span>
+          <span class="tab">Cá nhân</span>
+        </div>
+      </div>
+      <div class="donate-campaigns-filters">
+        <select id="status-filter">
+          <option value="all">Đang thực hiện</option>
+          <option value="done">Đã kết thúc</option>
+        </select>
+        <select id="category-filter">
+          <option value="all">Danh mục</option>
+          <option value="trẻ em">Trẻ em</option>
+          <option value="môi trường">Môi trường</option>
+        </select>
+        <button id="refresh-campaigns" style="padding:10px 16px;border-radius:8px;border:1.5px solid #b3e5fc;background:#fafdff;cursor:pointer;">&#x21bb;</button>
+        <input id="search-campaign" type="text" placeholder="Tìm kiếm tên chiến dịch">
+      </div>
+      <div class="donate-campaigns-grid" id="donate-campaigns">
+        <div class="campaign-card-lg" data-status="all" data-category="môi trường" data-type="tổ chức" data-name="Trường Sa">
+          <img src="/img/campaign1.jpg" alt="Trường Sa">
+          <div class="campaign-card-overlay">
+            <div class="campaign-title">TRƯỜNG SA</div>
+            <div class="campaign-desc">Gửi lòng yêu nước, góp 1 triệu cây xanh cho Trường Sa.</div>
+            <div class="campaign-progress-bar"><div class="progress" style="width:7%"></div></div>
+            <div class="campaign-progress-info">10.909.287.408 đ <span>7%</span></div>
+            <button class="campaign-donate-btn-lg" data-campaign="Trường Sa">Quyên góp</button>
+          </div>
+        </div>
+        <div class="campaign-card-lg" data-status="all" data-category="môi trường" data-type="tổ chức" data-name="Đổi đồ cũ">
+          <img src="/img/campaign2.jpg" alt="Đổi đồ cũ">
+          <div class="campaign-card-overlay">
+            <div class="campaign-title">ĐỔI ĐỒ CŨ</div>
+            <div class="campaign-desc">Đổi đồ cũ lấy niềm vui mới! Gây quỹ xanh cho trẻ em vùng cao.</div>
+            <div class="campaign-progress-bar"><div class="progress" style="width:18%"></div></div>
+            <div class="campaign-progress-info">35.793.285 đ <span>18%</span></div>
+            <button class="campaign-donate-btn-lg" data-campaign="Đổi đồ cũ">Quyên góp</button>
+          </div>
+        </div>
+        <div class="campaign-card-lg" data-status="all" data-category="trẻ em" data-type="cá nhân" data-name="Cho em đến trường">
+          <img src="/img/campaign3.jpg" alt="Cho em đến trường">
+          <div class="campaign-card-overlay">
+            <div class="campaign-title">CHO EM ĐẾN TRƯỜNG</div>
+            <div class="campaign-desc">Kêu gọi kinh phí mua sách, điều kiện học tập cho trẻ em khó khăn.</div>
+            <div class="campaign-progress-bar"><div class="progress" style="width:10%"></div></div>
+            <div class="campaign-progress-info">20.737.203 đ <span>10%</span></div>
+            <button class="campaign-donate-btn-lg" data-campaign="Cho em đến trường">Quyên góp</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="campaign-card" data-campaign="Sách cho bản xa">
-      <img src="/images/campaign2.jpg" alt="Sách cho bản xa">
-      <div class="campaign-info">
-        <h3>Sách cho bản xa</h3>
-        <p>Góp sách, xây tủ sách nhỏ cho các điểm trường vùng sâu vùng xa, giúp trẻ em tiếp cận tri thức mới.</p>
-        <button class="btn campaign-donate-btn" onclick="selectCampaign('Sách cho bản xa')">Ủng hộ</button>
-        <div class="campaign-total">Đã quyên góp: <b>7,500,000 VND</b></div>
-      </div>
-    </div>
-    <div class="campaign-card" data-campaign="Bữa trưa cho em">
-      <img src="/images/campaign3.jpg" alt="Bữa trưa cho em">
-      <div class="campaign-info">
-        <h3>Bữa trưa cho em</h3>
-        <p>Hỗ trợ bữa ăn đủ chất cho học sinh nghèo vùng cao, giúp các em yên tâm đến trường.</p>
-        <button class="btn campaign-donate-btn" onclick="selectCampaign('Bữa trưa cho em')">Ủng hộ</button>
-        <div class="campaign-total">Đã quyên góp: <b>5,200,000 VND</b></div>
-      </div>
-    </div>
-  </div>
-  <form class="donate-form" id="charity-form">
-    <label>Họ và tên</label>
-    <input type="text" placeholder="Nhập họ tên...">
-    <label>Email</label>
-    <input type="email" placeholder="Nhập email...">
-    <label>Số tiền (VND)</label>
-    <input type="number" placeholder="Nhập số tiền...">
-    <label>Chọn chiến dịch</label>
-    <select id="campaign-select">
-      <option value="Áo ấm cho em">Áo ấm cho em</option>
-      <option value="Sách cho bản xa">Sách cho bản xa</option>
-      <option value="Bữa trưa cho em">Bữa trưa cho em</option>
-    </select>
-    <label>Lời nhắn (không bắt buộc)</label>
-    <input type="text" placeholder="Lời nhắn...">
-    <button type="submit" class="btn">Quyên góp thiện nguyện</button>
-  </form>
-  <div>
-    <b>Công khai quyên góp thiện nguyện:</b>
-    <table class="donate-table">
-      <tr><th>Họ tên</th><th>Số tiền (VND)</th><th>Chiến dịch</th><th>Lời nhắn</th><th>Thời gian</th></tr>
-      <tr><td>Trần Thị C</td><td>2,000,000</td><td>Áo ấm cho em</td><td>Ủng hộ trẻ em vùng cao</td><td>28/05/2024</td></tr>
-      <tr><td>Nguyễn Văn D</td><td>1,500,000</td><td>Sách cho bản xa</td><td>Gửi sách cho các em</td><td>27/05/2024</td></tr>
-      <tr><td>Ẩn danh</td><td>1,000,000</td><td>Bữa trưa cho em</td><td></td><td>25/05/2024</td></tr>
-    </table>
-  </div>
-</div>
+  </main>
 
 <footer>
   <div class="col">
@@ -161,12 +163,32 @@
   </div>
 </footer>
 
-<script>
-function selectCampaign(name) {
-  document.getElementById('campaign-select').value = name;
-  document.getElementById('charity-form').scrollIntoView({behavior: 'smooth'});
-}
-</script>
-
+  <script>
+    function showTab(tab) {
+      document.getElementById('tab-web').style.display = tab === 'web' ? '' : 'none';
+      document.getElementById('tab-charity').style.display = tab === 'charity' ? '' : 'none';
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('.tab-btn' + (tab === 'web' ? ':first-child' : ':last-child')).classList.add('active');
+      if(tab === 'charity') {
+        var provinceSelect = document.getElementById('province-select');
+        if(provinceSelect) {
+          provinceSelect.selectedIndex = 1;
+          provinceSelect.focus();
+          // Kích hoạt sự kiện change để lọc luôn
+          provinceSelect.dispatchEvent(new Event('change'));
+        }
+      }
+    }
+    document.getElementById('province-select').addEventListener('change', function() {
+      var val = this.value;
+      document.querySelectorAll('.campaign-card').forEach(function(card) {
+        if (val === 'all' || card.getAttribute('data-province') === val) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
