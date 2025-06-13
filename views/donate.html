@@ -169,24 +169,19 @@
       document.getElementById('tab-charity').style.display = tab === 'charity' ? '' : 'none';
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelector('.tab-btn' + (tab === 'web' ? ':first-child' : ':last-child')).classList.add('active');
-      if(tab === 'charity') {
-        var provinceSelect = document.getElementById('province-select');
-        if(provinceSelect) {
-          provinceSelect.selectedIndex = 1;
-          provinceSelect.focus();
-          // Kích hoạt sự kiện change để lọc luôn
-          provinceSelect.dispatchEvent(new Event('change'));
-        }
-      }
     }
-    document.getElementById('province-select').addEventListener('change', function() {
-      var val = this.value;
-      document.querySelectorAll('.campaign-card').forEach(function(card) {
-        if (val === 'all' || card.getAttribute('data-province') === val) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
+
+    // Thêm sự kiện click cho nút Quyên góp trên card
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.campaign-donate-btn-lg').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var name = btn.getAttribute('data-campaign');
+          if (name) {
+            window.location.href = '/campaign-detail.html?name=' + encodeURIComponent(name);
+          } else {
+            window.location.href = '/campaign-detail.html';
+          }
+        });
       });
     });
   </script>

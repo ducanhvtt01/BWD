@@ -1,9 +1,9 @@
 /* =====================================================
-   WOW x2 THEME – Ultra‑modern makeover for ACE SKILLS (June 2025)
+   WOW x2 THEME – Ultra‑modern makeover for ACE SKILLS (June 2025)
    Drop this file after your legacy stylesheets → it overrides + enhances.
    ===================================================== */
 
-/* ---------- Google Fonts ---------- */
+/* ---------- Google Fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 .text-gradient {
@@ -12,7 +12,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* ---------- Design Tokens ---------- */
+/* ---------- Design Tokens ---------- */
 :root {
   /* Dynamic hue lets you shift the brand colour in one place */
   --hue: 210;
@@ -89,7 +89,7 @@ body {
   gap: .6rem;
   padding: 1rem 2.4rem;
   border-radius: 100vmax;
-  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: 0.04em;
@@ -107,7 +107,7 @@ body {
     box-shadow 0.35s cubic-bezier(.3,.7,.2,1);
   outline: none;
   isolation: isolate;
-  /* Hiệu ứng “pulse” mặc định */
+  /* Hiệu ứng "pulse" mặc định */
   animation: btn-pulse 2.6s infinite cubic-bezier(.6,0,.7,1.2);
 }
 @keyframes btn-pulse {
@@ -267,7 +267,7 @@ nav a:hover::after {
 }
 
 .hero h1 {
-  font-family: 'Montserrat', 'Poppins', 'Playfair Display', serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem); /* min ≈ 19px, max ≈ 38px */
   font-weight: 750;
   line-height: 1.15;
@@ -282,7 +282,7 @@ nav a:hover::after {
 }
 
 .hero p {
-  font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: #fff;
@@ -390,6 +390,6 @@ footer .social {
 
 /* ---------- Tiny script (vanilla) ---------- */
 @supports (animation-timeline: scroll()) {
-  /* Optional: parallax hero text using Scroll‑Timeline (Chrome 115+) */
+  /* Optional: parallax hero text using Scroll‑Timeline (Chrome 115+) */
 }
 /* End of WOW x2 Theme */

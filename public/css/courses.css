@@ -51,6 +51,7 @@ nav a {
   padding: 0.5em 1em;
   border-radius: 100vmax;
   transition: background 0.25s, color 0.22s;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Enhanced Hero Section */
@@ -88,6 +89,7 @@ nav a {
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 1s ease;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .courses-hero p {
@@ -100,6 +102,7 @@ nav a {
     animation: fadeInUp 1s ease 0.2s;
     opacity: 0;
     animation-fill-mode: forwards;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @keyframes fadeInUp {
@@ -153,11 +156,13 @@ nav a {
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 10px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .search-subtitle {
     color: #64748b;
     font-size: 1.1rem;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .search-main {
@@ -191,11 +196,13 @@ nav a {
     color: #1f2937;
     background: transparent;
     width: 100%;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .search-input::placeholder {
     color: #94a3b8;
     font-weight: 400;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .search-input:focus {
@@ -229,6 +236,7 @@ nav a {
     gap: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .search-button:hover,
@@ -248,6 +256,7 @@ nav a {
     border: 1px solid #ccc;
     border-radius: 12px;
     outline: none;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Category Pills */
@@ -271,6 +280,7 @@ nav a {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .category-pill i {
@@ -349,6 +359,7 @@ nav a {
     border-radius: 40px;
     border: 2px solid transparent;
     background: white;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .sort-option i{
@@ -391,6 +402,7 @@ nav a {
     border: 1px solid #e2e8f0;
     cursor: pointer;
     transition: all 0.2s ease;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .quick-filter:hover {
@@ -503,7 +515,7 @@ nav a {
   padding: 0.48em 1.45em;
   border-radius: 2em;
   font-size: 1rem;
-  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   background: linear-gradient(90deg, #eaf6ff 40%, var(--primary, #2596ff) 100%);
   color: var(--primary, #2596ff);
@@ -569,6 +581,7 @@ nav a {
     line-height: 1.4;
     margin-bottom: 8px;
     margin-top: 12px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .course-desc {
@@ -580,6 +593,7 @@ nav a {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Enhanced Tags */
@@ -594,6 +608,7 @@ nav a {
     letter-spacing: 0.3px;
     z-index: 2;
     transition: all 0.3s ease;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .course-card:hover .card-tag {
@@ -620,6 +635,7 @@ nav a {
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
     transform-origin: left center;
     animation: pulseTag 2s infinite;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @keyframes pulseTag {
@@ -667,6 +683,7 @@ nav a {
     background: #f8f9fa;
     border-radius: 15px;
     align-self: flex-start;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .course-rating i {
@@ -689,6 +706,7 @@ nav a {
     padding-top: 12px;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     margin-top: auto;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .course-meta span {
@@ -707,6 +725,7 @@ nav a {
 .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Enhanced Pagination */
@@ -734,6 +753,7 @@ nav a {
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 0 15px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .pagination-button:hover:not(.disabled) {
@@ -798,6 +818,7 @@ nav a {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 25px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .footer ul li {
@@ -808,6 +829,7 @@ nav a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: all 0.3s ease;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .footer ul li a:hover {
@@ -847,657 +869,10 @@ nav a {
     border: none;
     color: white;
     padding: 10px 20px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .newsletter-form .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.newsletter-form .btn {
-    padding: 10px 25px;
-    border-radius: 25px;
-}
-
-/* Category Colors */
-.card.communication .card-tag {
-    background: #e3f2fd;
-    color: #1976d2;
-}
-
-.card.leadership .card-tag {
-    background: #e8f5e9;
-    color: #2e7d32;
-}
-
-.card.time .card-tag {
-    background: #fff3e0;
-    color: #e65100;
-}
-
-.card.presentation .card-tag {
-    background: #f3e5f5;
-    color: #7b1fa2;
-}
-
-.card.thinking .card-tag {
-    background: #e8eaf6;
-    color: #283593;
-}
-
-.card.life .card-tag {
-    background: #e0f2f1;
-    color: #00695c;
-}
-
-.card.children .card-tag {
-    background: #fff8e1;
-    color: #ff8f00;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-    .header-transparent {
-        background: white;
-        padding: 15px 0;
-    }
-
-    .header-transparent .navbar-brand,
-    .header-transparent .nav-link {
-        color: var(--text-color);
-    }
-
-    .courses-hero {
-        padding: 100px 0 140px;
-    }
-
-    .courses-hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .filter-container {
-        margin: 0 15px;
-    }
-
-    .courses-grid {
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        padding: 0 15px;
-    }
-
-    .section-header {
-        padding: 0 20px;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .courses-hero {
-        padding: 80px 0 120px;
-    }
-
-    .courses-hero h1 {
-        font-size: 2.2rem;
-        padding: 0 20px;
-    }
-
-    .courses-hero p {
-        font-size: 1.1rem;
-        padding: 0 20px;
-    }
-
-    .filter-tags {
-        gap: 8px;
-    }
-
-    .filter-tag {
-        padding: 6px 15px;
-        font-size: 0.9rem;
-    }
-
-    .course-card {
-        margin: 0 15px;
-    }
-
-    .footer {
-        padding: 50px 0 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .courses-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .course-card {
-        height: 350px;
-    }
-
-    .course-image {
-        height: 160px;
-    }
-
-    .course-content {
-        padding: 12px;
-    }
-
-    .course-title {
-        font-size: 1.1rem;
-    }
-
-    .course-desc {
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-    }
-
-    .course-rating {
-        padding: 5px 10px;
-    }
-
-    .course-rating i {
-        font-size: 0.9rem;
-    }
-
-    .course-meta span {
-        font-size: 0.8rem;
-    }
-
-    .search-box {
-        flex-direction: column;
-    }
-
-    .search-box input,
-    .search-box select {
-        width: 100%;
-    }
-
-    .filter-group {
-        min-width: 100%;
-    }
-
-    .search-filters {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .search-trigger {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-    }
-
-    .search-trigger i {
-        font-size: 20px;
-    }
-
-    .search-panel {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .search-panel-title {
-        font-size: 1.2rem;
-    }
-
-    .search-input {
-        padding: 12px 15px;
-        font-size: 1rem;
-    }
-
-    .search-filters {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-}
-
-/* Section Headers */
-.section-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-header h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 12px;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: #64748b;
-}
-
-/* Course Cards by Category */
-.course-card.communication .card-tag {
-    background: #eff6ff;
-    color: #2563eb;
-    border-color: #bfdbfe;
-}
-
-.course-card.leadership .card-tag {
-    background: #f0fdf4;
-    color: #16a34a;
-    border-color: #bbf7d0;
-}
-
-.course-card.business .card-tag {
-    background: #fff7ed;
-    color: #ea580c;
-    border-color: #fed7aa;
-}
-
-.course-card.tech .card-tag {
-    background: #f5f3ff;
-    color: #7c3aed;
-    border-color: #ddd6fe;
-}
-
-/* Children Section Specific Styles */
-.children-section {
-    background: #e3f2fd;
-    padding: 60px 0;
-    margin-top: 40px;
-}
-
-.children-section .section-header h2 {
-    color: #1976d2;
-}
-
-.children-section .section-header p {
-    color: #2196f3;
-}
-
-.course-card.children {
-    border: none;
-    background: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.course-card.children:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-                0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.course-card.children .card-tag {
-    background: #e3f2fd;
-    color: #1976d2;
-    border-color: #90caf9;
-    font-weight: 600;
-}
-
-.course-card.children .course-title {
-    color: #1976d2;
-}
-
-.course-card.children .btn {
-    background: #2196f3;
-    color: white;
-    border: none;
-}
-
-.course-card.children .btn:hover {
-    background: #1976d2;
-    transform: translateY(-1px);
-}
-
-.course-card.children .course-meta {
-    color: #64748b;
-}
-
-.course-card.children .course-meta i {
-    color: #2196f3;
-}
-
-/* Enhanced Course Grid */
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1400px;
-}
-
-@media (max-width: 768px) {
-    .section-header h2 {
-        font-size: 1.8rem;
-    }
-
-    .section-header p {
-        font-size: 1rem;
-    }
-
-    .children-section {
-        padding: 40px 0;
-        margin-top: 30px;
-    }
-
-    .courses-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-        padding: 15px;
-    }
-}
-
-/* Interactive States */
-.category-pill {
-    cursor: pointer;
-    user-select: none;
-}
-
-.sort-option {
-    cursor: pointer;
-    user-select: none;
-}
-
-.btn {
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Hover Effects */
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.category-pill:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.sort-option:hover {
-    color: var(--primary-color);
-}
-
-/* Active States */
-.category-pill.active {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.sort-option.active {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-/* Animation Classes */
-.fade-in {
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.scale-click {
-    animation: scaleClick 0.3s ease;
-}
-
-/* Section Separation */
-.main-courses {
-    padding-bottom: 40px;
-}
-
-.children-section {
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,241,242,0.3) 100%);
-    padding: 30px 0;
-    margin-top: 40px;
-}
-
-/* Animation for active states */
-@keyframes activeScale {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Hover and Focus states */
-.category-pill:focus,
-.sort-option:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-}
-
-/* Active state for mobile */
-@media (max-width: 768px) {
-    .category-pill.active,
-    .sort-option.active {
-        transform: none;
-    }
-    
-    .category-pill,
-    .sort-option {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-    
-    .category-pill i,
-    .sort-option i {
-        font-size: 1rem;
-    }
-}
-
-/* Page Transition Effects */
-.page-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #2196f3, #1976d2);
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-
-.page-transition.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-body.transitioning {
-    overflow: hidden;
-}
-
-/* Link hover effect */
-a {
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    transform: translateY(-2px);
-}
-
-a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: currentColor;
-    transition: width 0.3s ease;
-}
-
-a:hover::after {
-    width: 100%;
-}
-
-/* Advanced Filters */
-.advanced-filters {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.filter-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #64748b;
-}
-
-.filter-group select {
-    padding: 10px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    color: #1f2937;
-    background: #f8fafc;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-group select:hover {
-    border-color: #cbd5e1;
-}
-
-.filter-group select:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-/* Course Card Updates */
-.course-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.course-card {
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Filters */
-@media (max-width: 768px) {
-    .advanced-filters {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
-
-    .filter-group select {
-        width: 100%;
-    }
-}
-
-/* Unified Button Style */
-.course-card {
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.course-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-}
-
-.course-meta {
-    margin-top: auto;
-    padding-top: 16px;
-}
-
-/* Button Style */
-.btn-learn {
-    display: inline-block;
-    width: 100%;
-    padding: 12px 24px;
-    background: #0066cc;
-    color: white;
-    text-align: center;
-    border-radius: 40px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    margin-top: 16px;
-    transition: all 0.3s ease;
-}
-
-.btn-learn:hover {
-    background: #0052a3;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
-}
-
-/* Course Card Layout */
-.course-card {
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.course-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.course-meta {
-    margin-top: auto;
-    padding-top: 16px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-}
-
-.course-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.course-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} 
-
-/* =========================
-   WOW hóa Button Courses!
-   ========================= */
-.btn, .btn-learn, .course-card .btn, .course-card .btn-learn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .6rem;
-  width: 100%;
-  padding: 1rem 2.2rem;
-  border-radius: 100vmax;
-  font-family: 'Montserrat', 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.12rem;
   letter-spacing: 0.04em;
@@ -1601,7 +976,7 @@ a:hover::after {
   padding: 0.5em 1.5em;
   border-radius: 2em;
   font-size: 1rem;
-  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   background: linear-gradient(90deg, #eaf6ff 40%, var(--primary, #2596ff) 100%);
   color: var(--primary, #2596ff);
@@ -1633,7 +1008,7 @@ a:hover::after {
 }
 .category-pill.active i{ color:#fff; }   /* icon cũng trắng */
 
-/* 3️⃣  Pill “Tất cả” (đầu tiên) – có style riêng khi inactive & active */
+/* 3️⃣  Pill "Tất cả" (đầu tiên) – có style riêng khi inactive & active */
 .category-pill:first-child{
   background:#fff;
   color:#1976d2;
