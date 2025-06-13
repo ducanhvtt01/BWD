@@ -74,7 +74,7 @@ body {
 }
 
 .section {
-  padding: clamp(4rem, 10vw, 8rem) 0;
+  padding: clamp(1rem, 2.5vw, 2rem) 0;
 }
 
 .text-gradient {
@@ -212,11 +212,6 @@ nav a::after {
 }
 
 nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-nav a.active::after {
   transform: scaleX(1);
   transform-origin: left;
 }
