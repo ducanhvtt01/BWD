@@ -305,6 +305,7 @@ nav a:hover::after {
 }
 
 .card {
+  margin:0 auto;
   position: relative;
   background: var(--card-bg);
   backdrop-filter: blur(12px) saturate(130%);
@@ -393,3 +394,129 @@ footer .social {
   /* Optional: parallax hero text using Scroll‑Timeline (Chrome 115+) */
 }
 /* End of WOW x2 Theme */
+
+/* Hero section căn giữa */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Section padding cho mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0 !important;
+  }
+  .goal-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .goal-img img {
+    max-width: 90vw;
+    height: auto;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .testimonial-section {
+    padding: 2rem 0 !important;
+  }
+}
+
+/* Căn giữa các card và testimonial */
+.cards, .testimonial-swiper {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer căn giữa */
+footer {
+  text-align: center;
+}
+footer .col {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive cho tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    width: 96%;
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+  .goal-row {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .goal-img img {
+    max-width: 80vw;
+    height: auto;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .testimonial-section {
+    padding: 2.5rem 0;
+  }
+  .testimonial-swiper {
+    max-width: 90vw;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  footer .col {
+    min-width: 160px;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Responsive cho mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  .section {
+    padding: 2rem 0 !important;
+  }
+  .goal-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .goal-img img {
+    max-width: 90vw;
+    height: auto;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .testimonial-section {
+    padding: 2rem 0 !important;
+  }
+  .testimonial-swiper {
+    max-width: 98vw;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .col {
+    margin-bottom: 1.5rem;
+  }
+}

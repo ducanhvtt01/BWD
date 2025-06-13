@@ -73,4 +73,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       link.classList.add('active');
     }
   });
+
+  // Responsive nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinksContainer = document.querySelector('.nav-links');
+  if (navToggle && navLinksContainer) {
+    navToggle.addEventListener('click', function() {
+      navLinksContainer.classList.toggle('open');
+    });
+    navLinksContainer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinksContainer.classList.remove('open'));
+    });
+  }
 });
