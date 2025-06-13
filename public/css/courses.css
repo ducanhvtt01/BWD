@@ -42,6 +42,20 @@
     color: var(--primary-color);
 }
 
+.courses-title{
+    margin: 90px 0 2px;
+    padding: 0 0 0 40px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--primary-dark, #005bb6);
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    background: -webkit-linear-gradient(90deg, #4fc3f7, #005be6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 16px #b6e4ff99;
+}
+
 nav a {
   color: var(--text);
   text-decoration: none;
@@ -1568,7 +1582,7 @@ a:hover::after {
   background: #fff;
   border-radius: 2rem;
   box-shadow: 0 8px 32px rgba(0,60,120,0.10);
-  overflow: visible; /* Quan trọng để tag nổi lên ngoài card */
+  overflow: hidden; /* Quan trọng để tag nổi lên ngoài card */
   position: relative;
   min-height: 370px;
   transition: transform 0.65s cubic-bezier(.2,.7,.4,1), box-shadow 0.66s;
