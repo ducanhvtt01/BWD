@@ -1,0 +1,148 @@
+/* Hero Section */
+.children-hero {
+  background: linear-gradient(120deg, #e3f2fd 60%, #fff 100%);
+  padding: 40px 0 24px 0;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.children-hero h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #1761a0;
+  margin-bottom: 10px;
+}
+.children-hero p {
+  font-size: 1.15rem;
+  color: #2e3a4b;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Map Section */
+.children-map-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.children-map-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(23,97,160,0.10);
+  padding: 24px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.children-map-legend {
+  font-size: 1.05rem;
+  color: #1761a0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#vietnam-map {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+#vietnam-map path {
+  cursor: pointer;
+  transition: fill 0.2s, stroke 0.2s;
+}
+#vietnam-map path:hover, #vietnam-map path:focus {
+  fill: #1976d2 !important;
+  stroke: #fff !important;
+}
+
+/* Campaigns Section */
+.children-campaigns-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.children-campaigns-header h2 {
+  font-size: 1.3rem;
+  color: #1761a0;
+  font-weight: 700;
+}
+.children-campaigns-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.children-campaign-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(33,150,243,0.08);
+  overflow: hidden;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: box-shadow .2s, transform .2s;
+  border: 1.5px solid #e3f2fd;
+}
+.children-campaign-card:hover {
+  box-shadow: 0 8px 32px rgba(33,150,243,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+.children-campaign-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.children-campaign-info {
+  padding: 16px 14px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.children-campaign-info h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #1761a0;
+  margin-bottom: 2px;
+}
+.children-campaign-info p {
+  font-size: 0.97rem;
+  color: #2e3a4b;
+  margin-bottom: 6px;
+}
+.children-campaign-status {
+  font-size: 0.95rem;
+  color: #388e3c;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.children-campaign-card.upcoming .children-campaign-status {
+  color: #fbc02d;
+}
+.children-campaign-card.ended .children-campaign-status {
+  color: #bdbdbd;
+}
+.no-campaign {
+  color: #888;
+  font-size: 1.05rem;
+  padding: 24px 0;
+  text-align: center;
+}
+.selected-province {
+  font-size: 1.05rem;
+  color: #1976d2;
+  margin-top: 4px;
+}
+@media (max-width: 900px) {
+  .children-campaigns-list { gap: 14px; }
+  .children-campaign-card { width: 95vw; max-width: 370px; }
+  .children-map-section { padding: 0 8px; }
+}
+@media (max-width: 600px) {
+  .children-hero h1 { font-size: 1.1rem; }
+  .children-hero p { font-size: 0.98rem; }
+  .children-campaign-card img { height: 110px; }
+  .children-campaign-card { max-width: 98vw; }
+} 

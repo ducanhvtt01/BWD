@@ -3,27 +3,19 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Trẻ em | SoftSkill4All</title>
+<title>Trẻ em vùng cao | ACE SKILLS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="/css/variables.css">
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/hero.css">
-<link rel="stylesheet" href="/css/section.css">
-<link rel="stylesheet" href="/css/goal.css">
-<link rel="stylesheet" href="/css/card.css">
-<link rel="stylesheet" href="/css/button.css">
-<link rel="stylesheet" href="/css/swiper.css">
+<link rel="stylesheet" href="/css/children.css">
 <link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/form.css">
 <link rel="stylesheet" href="/css/wow-theme-index.css">
 <link rel="stylesheet" href="/css/responsive.css">
 
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
 <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 <script defer src="/js/main.js"></script>
 
 </head>
@@ -48,13 +40,46 @@
   </nav>
 </header>
 
-
-<section class="hero" data-aos="fade-up">
-  <h1>Trẻ em</h1>
-  <p>Nội dung đang được phát triển — quay lại sau bạn nhé!</p>
-  <svg class="wave" viewBox="0 0 1440 320"><path fill="#f0f8ff" fill-opacity="1" d="M0,224L40,197.3C80,171,160,117,240,112C320,107,400,149,480,181.3C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,160C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+<section class="children-hero" data-aos="fade-up">
+  <h1>Trẻ em vùng cao - Chung tay vì tương lai</h1>
+  <p>Khám phá các chiến dịch thiện nguyện dành cho trẻ em vùng cao trên khắp Việt Nam. Click vào bản đồ để xem các chiến dịch tại từng tỉnh thành!</p>
 </section>
 
+<section class="children-map-section" data-aos="fade-up">
+  <div class="children-map-container">
+    <!-- SVG bản đồ Việt Nam đơn giản, mỗi tỉnh có id riêng (ví dụ: id="hanoi", id="laocai", ...) -->
+    <div class="children-map-legend">Chọn tỉnh thành trên bản đồ để xem chiến dịch</div>
+    <svg id="vietnam-map" viewBox="0 0 400 700" width="320" height="560">
+      <!-- Ví dụ: chỉ vẽ 3 tỉnh, bạn có thể thay SVG chi tiết hơn nếu muốn -->
+      <g>
+        <path id="hanoi" d="M120,100 l40,0 l0,40 l-40,0 z" fill="#b3e5fc" stroke="#1976d2" stroke-width="2"/>
+        <text x="130" y="125" font-size="16" fill="#1976d2">Hà Nội</text>
+        <path id="laocai" d="M60,60 l40,0 l0,40 l-40,0 z" fill="#b2dfdb" stroke="#00796b" stroke-width="2"/>
+        <text x="70" y="85" font-size="16" fill="#00796b">Lào Cai</text>
+        <path id="dienbien" d="M30,150 l40,0 l0,40 l-40,0 z" fill="#ffe082" stroke="#fbc02d" stroke-width="2"/>
+        <text x="35" y="175" font-size="16" fill="#fbc02d">Điện Biên</text>
+        <!-- ...Thêm các tỉnh khác nếu muốn... -->
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="children-campaigns-section" data-aos="fade-up">
+  <div class="children-campaigns-header">
+    <h2 id="campaigns-title">Chiến dịch đang/sắp diễn ra (Toàn quốc)</h2>
+    <div id="selected-province" class="selected-province"></div>
+  </div>
+  <div id="campaigns-list" class="children-campaigns-list">
+    <!-- Danh sách chiến dịch sẽ được render ở đây bằng JS -->
+  </div>
+</section>
+
+<section class="children-campaigns-history-section" data-aos="fade-up">
+  <h2>Chiến dịch đã diễn ra</h2>
+  <div id="campaigns-history-list" class="children-campaigns-list">
+    <!-- Danh sách chiến dịch đã diễn ra sẽ render ở đây bằng JS -->
+  </div>
+</section>
 
 <footer>
   <div class="col">
@@ -73,6 +98,83 @@
     <a href="/courses">Khóa học</a>
   </div>
 </footer>
+
+<script>
+// Dữ liệu mẫu các chiến dịch (có thể lấy từ backend nếu muốn)
+const campaigns = [
+  { id: 1, name: "Áo ấm cho em", province: "laocai", status: "ongoing", desc: "Tặng áo ấm cho trẻ em vùng cao Lào Cai mùa đông này.", img: "/images/campaign1.jpg" },
+  { id: 2, name: "Sách cho bản xa", province: "dienbien", status: "upcoming", desc: "Góp sách xây tủ sách cho các điểm trường Điện Biên.", img: "/images/campaign2.jpg" },
+  { id: 3, name: "Bữa trưa cho em", province: "hanoi", status: "ongoing", desc: "Hỗ trợ bữa ăn đủ chất cho trẻ em khó khăn tại Hà Nội.", img: "/images/campaign3.jpg" },
+  { id: 4, name: "Đèn cho em học", province: "laocai", status: "ended", desc: "Tặng đèn học cho học sinh nghèo vùng cao Lào Cai.", img: "/images/campaign4.jpg" },
+  { id: 5, name: "Sữa cho em", province: "dienbien", status: "ended", desc: "Chương trình tặng sữa cho trẻ em Điện Biên.", img: "/images/campaign5.jpg" },
+];
+
+function renderCampaigns(province = null) {
+  const list = document.getElementById('campaigns-list');
+  const title = document.getElementById('campaigns-title');
+  const selected = document.getElementById('selected-province');
+  let filtered = campaigns.filter(c => c.status === 'ongoing' || c.status === 'upcoming');
+  if (province) {
+    filtered = filtered.filter(c => c.province === province);
+    title.textContent = 'Chiến dịch đang/sắp diễn ra (' + provinceToName(province) + ')';
+    selected.textContent = '';
+  } else {
+    title.textContent = 'Chiến dịch đang/sắp diễn ra (Toàn quốc)';
+    selected.textContent = '';
+  }
+  list.innerHTML = filtered.length ? filtered.map(c => `
+    <div class="children-campaign-card ${c.status}">
+      <img src="${c.img}" alt="${c.name}">
+      <div class="children-campaign-info">
+        <h3>${c.name}</h3>
+        <p>${c.desc}</p>
+        <span class="children-campaign-status">${c.status === 'ongoing' ? 'Đang diễn ra' : 'Sắp diễn ra'}</span>
+      </div>
+    </div>
+  `).join('') : '<div class="no-campaign">Không có chiến dịch nào.</div>';
+}
+
+function renderHistory(province = null) {
+  const list = document.getElementById('campaigns-history-list');
+  let filtered = campaigns.filter(c => c.status === 'ended');
+  if (province) filtered = filtered.filter(c => c.province === province);
+  list.innerHTML = filtered.length ? filtered.map(c => `
+    <div class="children-campaign-card ended">
+      <img src="${c.img}" alt="${c.name}">
+      <div class="children-campaign-info">
+        <h3>${c.name}</h3>
+        <p>${c.desc}</p>
+        <span class="children-campaign-status">Đã kết thúc</span>
+      </div>
+    </div>
+  `).join('') : '<div class="no-campaign">Không có chiến dịch nào.</div>';
+}
+
+function provinceToName(id) {
+  switch(id) {
+    case 'hanoi': return 'Hà Nội';
+    case 'laocai': return 'Lào Cai';
+    case 'dienbien': return 'Điện Biên';
+    default: return id;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderCampaigns();
+  renderHistory();
+  // Bắt sự kiện click vào tỉnh trên bản đồ
+  ['hanoi','laocai','dienbien'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function() {
+        renderCampaigns(id);
+        renderHistory(id);
+      });
+    }
+  });
+});
+</script>
 
 </body>
 </html>
