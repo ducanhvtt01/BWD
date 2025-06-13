@@ -41,11 +41,10 @@
     <link rel="stylesheet" href="/css/variables.css" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/children.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/wow-theme-index.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
-    <link rel="stylesheet" href="/css/skill-children.css" />
+    <link rel="stylesheet" href="/css/children.css" />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -121,8 +120,7 @@
       <h1 class="main-skill-title">Trẻ em khó khăn - Chung tay vì tương lai</h1>
       <p>
         Khám phá các chiến dịch thiện nguyện dành cho trẻ em nghèo, khó khăn
-        trên khắp Việt Nam. Click vào bản đồ để xem các chiến dịch tại từng tỉnh
-        thành!
+        trên khắp Việt Nam.
       </p>
     </section>
 
@@ -2059,18 +2057,21 @@
       <!-- KẾT THÚC phần hiển thị -->
     </section>
 
+    <!-- Chiến dịch đang / sắp diễn ra -->
     <section class="children-campaigns-section" data-aos="fade-up">
-      <div class="children-campaigns-header">
-        <h2 id="campaigns-title">Chiến dịch đang/sắp diễn ra (Toàn quốc)</h2>
-        <div id="selected-province" class="selected-province"></div>
-      </div>
-      <div id="campaigns-list" class="children-campaigns-list">
-        <!-- Danh sách chiến dịch sẽ được render ở đây bằng JS -->
-      </div>
+      <h2 id="campaigns-title" class="section-title">
+        Chiến dịch đang / sắp diễn ra (Toàn quốc)
+      </h2>
+
+      <!-- ⬇️ KHÔNG được bỏ div này -->
+      <div id="selected-province" class="selected-province"></div>
+
+      <div id="campaigns-list" class="children-campaigns-list"></div>
     </section>
 
+
     <section class="children-campaigns-history-section" data-aos="fade-up">
-      <h2>Chiến dịch đã diễn ra</h2>
+    <h2 class="section-title">Chiến dịch đã diễn ra</h2>
       <div id="campaigns-history-list" class="children-campaigns-list">
         <!-- Danh sách chiến dịch đã diễn ra sẽ render ở đây bằng JS -->
       </div>

@@ -209,3 +209,16 @@
   .children-campaign-card { max-width: 98vw; }
   .children-map-container, .children-info-container { padding: 12px 4px; }
 }
+
+.section-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin: 0px 0 32px 0;
+  letter-spacing: 1.5px;
+  color: #684fff;
+  background: -webkit-linear-gradient(90deg, #6dc4ff, #a56bff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 16px #d6e6ff99;
+}
