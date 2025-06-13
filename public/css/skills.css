@@ -190,6 +190,7 @@
   max-width: 100vw;
   box-sizing: border-box;
   display: block;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -235,8 +236,9 @@
   display: flex;
   gap: 16px;
   margin: 0 0 26px 0;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-top: 20px;
+  padding-right: 110px;
+  padding-left: 110px;
 }
 
 .search-input {
