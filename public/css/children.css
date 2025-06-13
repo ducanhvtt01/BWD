@@ -222,3 +222,23 @@
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 16px #d6e6ff99;
 }
+
+.main-skill-title {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  text-align: center !important;  /* ép mạnh về trái */
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary-dark, #005bb6);
+  letter-spacing: 1px;
+  background: -webkit-linear-gradient(90deg, #4fc3f7, #005be6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 16px #b6e4ff99;
+  padding-left: 40px;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  display: block;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
