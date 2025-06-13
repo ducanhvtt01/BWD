@@ -73,7 +73,6 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
 };
 
 // Tạo index để tối ưu tốc độ tìm kiếm
-userSchema.index({ email: 1 });
 userSchema.index({ username: 1 });
 
 const User = mongoose.model('User', userSchema);
