@@ -11,6 +11,10 @@ header,
 .header,
 .header-transparent,
 .header-scrolled{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height        : var(--header-h) !important;
   padding-block : 0 !important;
   display       : flex;
@@ -37,7 +41,7 @@ header nav,
 
 /* ====== Logo ====== */
 header .logo{
-  font-size   : 1.45rem;
+  font-size   : 1.45rem !important;
   font-weight : 800;
   letter-spacing: .02em;
   color       : #1761a0;

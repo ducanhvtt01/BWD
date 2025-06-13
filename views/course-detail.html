@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết khóa học | ACE SKILLS</title>
+    <title>Chi tiết khóa học | SoftSkill4All</title>
     
     <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/course-detail.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/header.css">
-
+    <link rel="stylesheet" href="/css/wow-theme-index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
     <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -22,17 +22,22 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="/" class="logo text-gradient">ACE SKILLS</a>
+            <div class="logo text-gradient">ACE SKILLS</div>
             <div>
                 <a href="/">Trang chủ</a>
                 <a href="/skills">Kỹ năng</a>
                 <a href="/courses">Khóa học</a>
-                <a href="/children">Trẻ em</a>
+                <a href="/children" data-no-transition>Trẻ em</a>
                 <a href="/donate">Donate</a>
                 <a href="/login">Đăng nhập</a>
             </div>
         </nav>
     </header>
+
+    <style>
+        body { margin-top: 72px; }
+        @media (max-width: 768px) { body { margin-top: 64px; } }
+    </style>
 
     <!-- Course Hero Section -->
     <section class="course-hero">
@@ -281,13 +286,10 @@
                 categoryTag.textContent = courseInfo.category;
                 tagsContainer.appendChild(categoryTag);
                 
-                // Check if course is for children
-                const isChildrenCourse = courseInfo.isChildrenCourse || 
-                                      courseInfo.category === 'Dành cho trẻ em' ||
-                                      courseInfo.title.toLowerCase().includes('trẻ em') ||
-                                      courseInfo.title.toLowerCase().includes('cho trẻ');
+                // Check if course is for children based on the course card's class
+                const isChildrenCourse = courseInfo.isChildrenCourse || false;
                 
-                // Add "Trẻ em" tag for children's courses
+                // Add "Trẻ em" tag only for children's courses
                 if (isChildrenCourse) {
                     const childrenTag = document.createElement('span');
                     childrenTag.className = 'tag secondary';

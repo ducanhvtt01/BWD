@@ -42,17 +42,6 @@
     color: var(--primary-color);
 }
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  position: relative;
-  font-size: 1.14rem;    /* <<< CHỖ NÀY! */
-  font-weight: 700;
-  padding: 0.5em 1em;
-  border-radius: 100vmax;
-  transition: background 0.25s, color 0.22s;
-}
-
 /* Enhanced Hero Section */
 .courses-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -494,32 +483,22 @@ nav a {
 }
 
 /* Enhanced Course Cards */
-.card-tag {
-  position: absolute;
-  top: 22px;
-  left: 24px;
-  z-index: 3;
-  padding: 0.48em 1.45em;
-  border-radius: 2em;
-  font-size: 1rem;
-  font-family: 'Montserrat', 'Inter', sans-serif;
-  font-weight: 700;
-  background: linear-gradient(90deg, #eaf6ff 40%, var(--primary, #2596ff) 100%);
-  color: var(--primary, #2596ff);
-  box-shadow: 0 2px 18px 0 rgba(47,144,255,0.13);
-  border: none;
-  pointer-events: none; /* Đảm bảo không che nút hoặc ảnh */
-  opacity: 1;
-  transition: box-shadow 0.28s, filter 0.28s, opacity 0.22s;
-  filter: none;
+.course-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    height: 100%;
+    min-height: 380px;
 }
 
-.course-card:hover .card-tag {
-  filter: none;
-  opacity: 1;
-  box-shadow: 0 8px 28px 0 rgba(32,150,255,0.19);
-  background: linear-gradient(90deg, #eaf6ff 20%, var(--accent, #32d3e6) 100%);
-  color: var(--primary, #2596ff);
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .course-image {
@@ -1485,277 +1464,6 @@ a:hover::after {
     object-fit: cover;
 } 
 
-/* =========================
-   WOW hóa Button Courses!
-   ========================= */
-.btn, .btn-learn, .course-card .btn, .course-card .btn-learn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .6rem;
-  width: 100%;
-  padding: 1rem 2.2rem;
-  border-radius: 100vmax;
-  font-family: 'Montserrat', 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1.12rem;
-  letter-spacing: 0.04em;
-  background: linear-gradient(135deg, var(--primary, #2596ff), var(--accent, #32d3e6));
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 22px -4px var(--accent, #32d3e6), 0 0 0 0 rgba(50,211,230,0.11);
-  transition:
-    transform 0.24s cubic-bezier(.4,.8,.3,1.1),
-    box-shadow 0.33s cubic-bezier(.3,.7,.2,1);
-  isolation: isolate;
-  animation: btn-pulse 2.7s infinite cubic-bezier(.6,0,.7,1.2);
-}
-@keyframes btn-pulse {
-  0%, 100% { box-shadow: 0 4px 22px -4px var(--accent, #32d3e6), 0 0 0 0 rgba(50,211,230,0.13);}
-  60% { box-shadow: 0 7px 32px -5px var(--accent, #32d3e6), 0 0 0 12px rgba(50,211,230,0.08);}
-}
-
-.btn::before, .btn-learn::before, .course-card .btn::before, .course-card .btn-learn::before {
-  content: "";
-  position: absolute;
-  top: -10%;
-  left: -45%;
-  width: 60%;
-  height: 120%;
-  background: linear-gradient(120deg,
-    rgba(255,255,255,0.16) 18%,
-    rgba(255,255,255,0.60) 50%,
-    rgba(255,255,255,0.08) 100%);
-  transform: skewX(-22deg);
-  pointer-events: none;
-  filter: blur(1px);
-  animation: btn-shine-move 3.6s cubic-bezier(.6,0,.8,1) infinite;
-  z-index: 1;
-}
-@keyframes btn-shine-move {
-  0%   { left: -60%; opacity: 1; }
-  14%  { left: 120%; opacity: 1; }
-  15%  { left: 120%; opacity: 0; }
-  100% { left: 120%; opacity: 0; }
-}
-
-.btn:hover, .btn-learn:hover,
-.btn:focus, .btn-learn:focus,
-.course-card .btn:hover, .course-card .btn-learn:hover,
-.course-card .btn:focus, .course-card .btn-learn:focus {
-  transform: translateY(-4px) scale(1.045);
-  box-shadow:
-    0 14px 36px -8px var(--accent, #32d3e6),
-    0 0 0 6px rgba(32,150,255,0.10),
-    0 0 10px 2px var(--primary, #2596ff);
-}
-.btn:active, .btn-learn:active,
-.course-card .btn:active, .course-card .btn-learn:active {
-  transform: scale(.97);
-  box-shadow:
-    0 3px 8px -4px var(--primary-dark, #1761a0),
-    0 0 0 0 rgba(32,150,255,0.08);
-}
-
-/* =========================
-   WOW hóa Course Card
-   ========================= */
-.course-card {
-  background: #fff;
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(0,60,120,0.10);
-  overflow: visible; /* Quan trọng để tag nổi lên ngoài card */
-  position: relative;
-  min-height: 370px;
-  transition: transform 0.65s cubic-bezier(.2,.7,.4,1), box-shadow 0.66s;
-}
-.course-card:hover {
-  transform: rotateX(7deg) rotateY(-7deg) scale(1.037);
-  box-shadow: 0 18px 38px -12px rgba(0, 40, 80, 0.16);
-}
-.course-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: conic-gradient(from 180deg at 50% 50%, var(--primary, #2596ff) 0%, var(--accent, #32d3e6) 70%, transparent 100%);
-  filter: blur(15px);
-  z-index: -1;
-  opacity: .20;
-  transition: opacity .38s;
-}
-.course-card:hover::before { opacity: .4; }
-
-/* =========================
-   Gradient & Glow Tag, Pill, Sort
-   ========================= */
-/* Nổi tag card */
-.card-tag {
-  position: absolute;
-  top: 18px;
-  left: 26px;
-  z-index: 5;
-  padding: 0.5em 1.5em;
-  border-radius: 2em;
-  font-size: 1rem;
-  font-family: 'Montserrat', 'Inter', sans-serif;
-  font-weight: 700;
-  background: linear-gradient(90deg, #eaf6ff 40%, var(--primary, #2596ff) 100%);
-  color: var(--primary, #2596ff);
-  box-shadow: 0 2px 16px 0 rgba(47,144,255,0.11);
-  border: none;
-  pointer-events: none;
-  opacity: 1 !important;
-  filter: none !important;
-  transition: box-shadow 0.28s, filter 0.28s, opacity 0.22s, background 0.25s;
-}
-
-/* Gradient text cho title, tag, pill */
-.course-title{
-  background: linear-gradient(90deg,
-              var(--primary,#2596ff) 0%,
-              var(--accent,#32d3e6) 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;   /* Chrome / Safari */
-  color: transparent;                     /* Fallback */
-  font-size: 1.19rem;
-  font-weight: 800;
-  line-height: 1.4;
-  margin: 12px 0 8px;
-}
-
-/* =========================================================
-   2)  CATEGORY PILL (nút lọc chủ đề)
-   ========================================================= */
-.category-pill{
-  padding: 10px 20px;
-  background: #fff;
-  border: 2px solid #e5e7eb;
-  border-radius: 100vmax;
-  color: #64748b;
-  font-size: .95rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all .28s cubic-bezier(.5,.2,.2,1);
-  box-shadow: 0 2px 12px rgba(0,0,0,.05);
-}
-
-.category-pill:hover{
-  background: #eff6ff;
-  border-color: #3b82f6;
-  color: #3b82f6;
-}
-
-.category-pill.active{
-  background: linear-gradient(90deg,
-              var(--primary,#2596ff),
-              var(--accent,#32d3e6));
-  color: #fff !important;                 /* <<< chữ & icon luôn hiện */
-  border-color: transparent;
-  box-shadow:
-    0 4px 18px -3px var(--primary,#2596ff),
-    0 0 0   2px var(--accent,#32d3e6);
-}
-
-/* =========================================================
-   3)  SORT OPTION (Mới nhất / Phổ biến nhất) – đồng bộ màu
-   ========================================================= */
-.sort-option{
-  color: #64748b;
-  font-size: .95rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: #fff;
-  border: 2px solid #e5e7eb;
-  border-radius: 100vmax;
-  cursor: pointer;
-  transition: all .25s;
-}
-
-.sort-option:hover{
-  background: #eff6ff;
-  border-color: #3b82f6;
-  color: #3b82f6;
-}
-
-.sort-option.active{
-  background: linear-gradient(90deg,
-              var(--primary,#2596ff),
-              var(--accent,#32d3e6));
-  color: #fff !important;
-  border-color: transparent;
-  box-shadow:
-    0 4px 18px -3px var(--primary,#2596ff),
-    0 0 0   2px var(--accent,#32d3e6);
-}
-/* Để card-tag là màu thường dễ nhìn */
-.card-tag {
-  background: linear-gradient(90deg, #eaf6ff 40%, var(--primary, #2596ff) 100%);
-  color: var(--primary, #2596ff);
-  font-weight: 700;
-}
-
-.course-title {
-  font-size: 1.19rem;
-  line-height: 1.4;
-  margin-bottom: 8px;
-}
-
-/* Pills, sort-option giữ nguyên */
-.category-pill, .sort-option {
-  background: linear-gradient(90deg, #fff 60%, var(--bg, #eaf6ff) 100%);
-  border-radius: 100vmax;
-  box-shadow: 0 2px 12px 0 rgba(47,144,255,0.07);
-  border: 2px solid #e5e7eb;
-  font-weight: 600;
-  color: #1976d2;
-  transition: all 0.28s cubic-bezier(.5,.2,.2,1);
-}
-.category-pill.active, .sort-option.active {
-  background: linear-gradient(90deg, var(--primary, #2596ff), var(--accent, #32d3e6));
-  color: #fff;
-  box-shadow: 0 4px 18px -3px var(--primary, #2596ff), 0 0 0 2px var(--accent, #32d3e6);
-}
-
-/* =========================
-   Ripple click effect cho nút
-   ========================= */
-.btn, .btn-learn {
-  position: relative;
-  overflow: hidden;
-}
-.btn .ripple, .btn-learn .ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-  background: rgba(255,255,255,0.4);
-  opacity: 0.7;
-  pointer-events: none;
-  z-index: 3;
-}
-@keyframes ripple {
-  to {
-    transform: scale(3.5);
-    opacity: 0;
-  }
-}
-
-/* Responsive cho .card-tag */
-@media (max-width: 768px) {
-  .card-tag {
-    font-size: 0.9rem;
-    top: 13px;
-    left: 12px;
-    padding: 0.36em 1em;
-  }
+.section  {
+    padding: 3rem !important;
 }

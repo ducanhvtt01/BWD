@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="/css/form.css">
 <link rel="stylesheet" href="/css/responsive.css">
 <link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/wow-theme-index.css">
 
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
@@ -28,14 +29,19 @@
 </head>
 <body>
 
+  <style>
+    body { margin-top: 72px; }
+    @media (max-width: 768px) { body { margin-top: 64px; } }
+  </style>
+
 <header>
   <nav class="container">
-    <a href="/" class="logo text-gradient">ACE SKILLS</a>
+    <div class="logo text-gradient">ACE SKILLS</div>
     <div>
       <a href="/">Trang chủ</a>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
-      <a href="/children">Trẻ em</a>
+      <a href="/children" data-no-transition>Trẻ em</a>
       <a href="/donate">Donate</a>
       <a href="/login">Đăng nhập</a>
     </div>
@@ -61,6 +67,65 @@
   </form>
 </section>
 
+<!-- Quyên góp thiện nguyện -->
+<div class="donate-section" id="tab-charity" style="display:none">
+  <div class="donate-title">2. Quyên góp thiện nguyện</div>
+  <div class="donate-campaigns">
+    <div class="campaign-card" data-campaign="Áo ấm cho em">
+      <img src="/images/campaign1.jpg" alt="Áo ấm cho em">
+      <div class="campaign-info">
+        <h3>Áo ấm cho em</h3>
+        <p>Chung tay mang đến những chiếc áo ấm cho trẻ em vùng cao trong mùa đông giá rét.</p>
+        <button class="btn campaign-donate-btn" onclick="selectCampaign('Áo ấm cho em')">Ủng hộ</button>
+        <div class="campaign-total">Đã quyên góp: <b>12,000,000 VND</b></div>
+      </div>
+    </div>
+    <div class="campaign-card" data-campaign="Sách cho bản xa">
+      <img src="/images/campaign2.jpg" alt="Sách cho bản xa">
+      <div class="campaign-info">
+        <h3>Sách cho bản xa</h3>
+        <p>Góp sách, xây tủ sách nhỏ cho các điểm trường vùng sâu vùng xa, giúp trẻ em tiếp cận tri thức mới.</p>
+        <button class="btn campaign-donate-btn" onclick="selectCampaign('Sách cho bản xa')">Ủng hộ</button>
+        <div class="campaign-total">Đã quyên góp: <b>7,500,000 VND</b></div>
+      </div>
+    </div>
+    <div class="campaign-card" data-campaign="Bữa trưa cho em">
+      <img src="/images/campaign3.jpg" alt="Bữa trưa cho em">
+      <div class="campaign-info">
+        <h3>Bữa trưa cho em</h3>
+        <p>Hỗ trợ bữa ăn đủ chất cho học sinh nghèo vùng cao, giúp các em yên tâm đến trường.</p>
+        <button class="btn campaign-donate-btn" onclick="selectCampaign('Bữa trưa cho em')">Ủng hộ</button>
+        <div class="campaign-total">Đã quyên góp: <b>5,200,000 VND</b></div>
+      </div>
+    </div>
+  </div>
+  <form class="donate-form" id="charity-form">
+    <label>Họ và tên</label>
+    <input type="text" placeholder="Nhập họ tên...">
+    <label>Email</label>
+    <input type="email" placeholder="Nhập email...">
+    <label>Số tiền (VND)</label>
+    <input type="number" placeholder="Nhập số tiền...">
+    <label>Chọn chiến dịch</label>
+    <select id="campaign-select">
+      <option value="Áo ấm cho em">Áo ấm cho em</option>
+      <option value="Sách cho bản xa">Sách cho bản xa</option>
+      <option value="Bữa trưa cho em">Bữa trưa cho em</option>
+    </select>
+    <label>Lời nhắn (không bắt buộc)</label>
+    <input type="text" placeholder="Lời nhắn...">
+    <button type="submit" class="btn">Quyên góp thiện nguyện</button>
+  </form>
+  <div>
+    <b>Công khai quyên góp thiện nguyện:</b>
+    <table class="donate-table">
+      <tr><th>Họ tên</th><th>Số tiền (VND)</th><th>Chiến dịch</th><th>Lời nhắn</th><th>Thời gian</th></tr>
+      <tr><td>Trần Thị C</td><td>2,000,000</td><td>Áo ấm cho em</td><td>Ủng hộ trẻ em vùng cao</td><td>28/05/2024</td></tr>
+      <tr><td>Nguyễn Văn D</td><td>1,500,000</td><td>Sách cho bản xa</td><td>Gửi sách cho các em</td><td>27/05/2024</td></tr>
+      <tr><td>Ẩn danh</td><td>1,000,000</td><td>Bữa trưa cho em</td><td></td><td>25/05/2024</td></tr>
+    </table>
+  </div>
+</div>
 
 <footer>
   <div class="col">
@@ -79,6 +144,13 @@
     <a href="/courses">Khóa học</a>
   </div>
 </footer>
+
+<script>
+function selectCampaign(name) {
+  document.getElementById('campaign-select').value = name;
+  document.getElementById('charity-form').scrollIntoView({behavior: 'smooth'});
+}
+</script>
 
 </body>
 </html>

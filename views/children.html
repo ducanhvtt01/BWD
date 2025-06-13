@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="/css/swiper.css">
 <link rel="stylesheet" href="/css/footer.css">
 <link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/wow-theme-index.css">
 <link rel="stylesheet" href="/css/responsive.css">
 
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
@@ -28,14 +29,19 @@
 </head>
 <body>
 
+  <style>
+    body { margin-top: 72px; }
+    @media (max-width: 768px) { body { margin-top: 64px; } }
+  </style>
+
 <header>
   <nav class="container">
-    <a href="/" class="logo text-gradient">ACE SKILLS</a>
+    <div class="logo text-gradient">ACE SKILLS</div>
     <div>
       <a href="/">Trang chủ</a>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
-      <a href="/children">Trẻ em</a>
+      <a href="/children" data-no-transition>Trẻ em</a>
       <a href="/donate">Donate</a>
       <a href="/login">Đăng nhập</a>
     </div>
