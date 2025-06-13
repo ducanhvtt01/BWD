@@ -52,13 +52,17 @@
 <header>
   <nav class="container">
     <div class="logo text-gradient">ACE SKILLS</div>
-    <div>
+    <div class="nav-links">
       <a href="/">Trang chủ</a>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
       <a href="/children" data-no-transition>Trẻ em</a>
       <a href="/donate">Donate</a>
-      <a href="/login">Đăng nhập</a>
+      <a href="/login" id="loginNav">Đăng nhập</a>
+      <a href="/profile" id="profileNav" style="display: none;" class="profile-link">
+        <span class="profile-name"></span>
+        <img src="/image/default-avatar.png" alt="Avatar" class="profile-avatar">
+      </a>
     </div>
   </nav>
 </header>
@@ -70,11 +74,11 @@
 </section>
 
 <section class="section" data-aos="fade-up">
-  <form class="container">
+  <form class="container" id="loginForm">
     <label>Email</label>
-    <input type="email" placeholder="Nhập email...">
+    <input type="email" name="email" placeholder="Nhập email..." required>
     <label>Mật khẩu</label>
-    <input type="password" placeholder="Nhập mật khẩu...">
+    <input type="password" name="password" placeholder="Nhập mật khẩu..." required>
     <button type="submit" class="btn">Đăng nhập</button>
     <p>Chưa có tài khoản? <a href="/register">Đăng ký ngay</a></p>
   </form>
@@ -98,6 +102,56 @@
     <a href="/courses">Khóa học</a>
   </div>
 </footer>
+
+<script>
+// Kiểm tra đăng nhập
+window.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token');
+    const loginNav = document.getElementById('loginNav');
+    const profileNav = document.getElementById('profileNav');
+
+    if (token) {
+        // Đã đăng nhập: ẩn Đăng nhập, hiện Profile
+        if (loginNav) loginNav.style.display = 'none';
+        if (profileNav) profileNav.style.display = '';
+        // Chuyển về trang chủ nếu đã đăng nhập
+        window.location.href = '/';
+    }
+});
+
+// Xử lý form đăng nhập
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = loginForm.email.value;
+        const password = loginForm.password.value;
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                showToast('Đăng nhập thành công!');
+                setTimeout(() => { window.location.href = '/'; }, 1200);
+            } else {
+                showToast(data.message || 'Đăng nhập thất bại!');
+            }
+        } catch (error) {
+            showToast('Có lỗi xảy ra, vui lòng thử lại!');
+        }
+    });
+}
+</script>
+
+<script src="/js/login.js"></script>
+<script src="/js/auth.js"></script>
+
+<div id="toast" class="toast"></div>
 
 </body>
 </html>

@@ -34,14 +34,18 @@
 <body>
 <header>
   <nav class="container">
-      <div class="logo text-gradient">ACE SKILLS</div>
-    <div>
+    <div class="logo text-gradient">ACE SKILLS</div>
+    <div class="nav-links">
       <a href="/">Trang chủ</a>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
-        <a href="/children" data-no-transition>Trẻ em</a>
+      <a href="/children" data-no-transition>Trẻ em</a>
       <a href="/donate">Donate</a>
-      <a href="/login">Đăng nhập</a>
+      <a href="/login" id="loginNav">Đăng nhập</a>
+      <a href="/profile" id="profileNav" style="display: none;" class="profile-link">
+        <span class="profile-name"></span>
+        <img src="/image/default-avatar.png" alt="Avatar" class="profile-avatar">
+      </a>
     </div>
   </nav>
 </header>
@@ -57,9 +61,9 @@
       <div class="donate-title">1. Quyên góp tự nguyện duy trì website</div>
       <div class="donate-account">
         <b>Thông tin tài khoản nhận quyên góp:</b><br>
-        Chủ tài khoản: Trần Duy Đức Anh<br>
-        Số tài khoản: 1035329061<br>
-        Ngân hàng: Vietcombank (VCB) - CN Cần Thơ<br>
+        Chủ tài khoản: Nguyễn Văn A<br>
+        Số tài khoản: 123456789<br>
+        Ngân hàng: Vietcombank (VCB) - CN Hà Nội<br>
         Nội dung chuyển khoản: <b>"Ho ten - Duy tri web"</b>
       </div>
       <div style="text-align:center;margin-bottom:18px;">
@@ -185,5 +189,7 @@
       });
     });
   </script>
+
+  <script src="/js/auth.js"></script>
 </body>
 </html>

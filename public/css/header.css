@@ -53,7 +53,7 @@ header nav a,
 .header-transparent nav a{
   font-size   : var(--nav-fs) !important;
   font-weight : 700;
-  line-height : var(--header-h);
+  line-height : 40px;
   padding     : 0 1.1rem;
   color       : #1761a0;
   text-decoration: none;
@@ -75,4 +75,62 @@ header nav a[aria-current="page"]{
   :root      { --header-h:64px; }
   header nav a{ font-size:1.02rem !important; padding:0 .6rem; }
   header .logo{ font-size:1.25rem; }
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+}
+/* Profile Link Styles */
+.profile-link {
+  display: flex ;
+  height: 40px;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  padding: 4px 8px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.profile-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.profile-avatar {
+  display: block;
+  width: 32px;
+  height: 32px; 
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--primary, #2471ff);
+}
+
+.profile-name {
+  font-weight: 500;
+  color: var(--primary, #2471ff);
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 220px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 16px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 40px;
+  font-size: 1rem;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+.toast.show {
+  visibility: visible;
+  opacity: 1;
 }

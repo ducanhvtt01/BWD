@@ -30,6 +30,7 @@
   <script src="/js/hero-bg-video.js"></script>
   <script src="/js/testimonial-swiper.js"></script>
   <script src="/path/to/btn-ripple.js"></script>
+  <script src="/js/auth.js"></script>
 </head>
 
 <body>
@@ -43,13 +44,17 @@
   <header>
     <nav class="container">
       <div class="logo text-gradient">ACE SKILLS</div>
-      <div>
+      <div class="nav-links">
         <a href="/">Trang chủ</a>
         <a href="/skills">Kỹ năng</a>
         <a href="/courses">Khóa học</a>
         <a href="/children" data-no-transition>Trẻ em</a>
         <a href="/donate">Donate</a>
-        <a href="/login">Đăng nhập</a>
+        <a href="/login" id="loginNav">Đăng nhập</a>
+        <a href="/profile" id="profileNav" style="display: none;" class="profile-link">
+          <span class="profile-name"></span>
+          <img src="/image/default-avatar.png" alt="Avatar" class="profile-avatar">
+        </a>
       </div>
     </nav>
   </header>
@@ -179,6 +184,8 @@
       <a href="/courses">Khóa học</a>
     </div>
   </footer>
+
+  <div id="toast" class="toast"></div>
 
 </body>
 </html>
