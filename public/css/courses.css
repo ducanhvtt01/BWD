@@ -365,7 +365,6 @@ nav a {
 .sort-option.active{
   background:linear-gradient(90deg,var(--primary,#2596ff),var(--accent,#32d3e6));
   color:#fff;
-  border-color:transparent;
   box-shadow:0 4px 18px -3px var(--primary,#2596ff),
              0 0 0 2px var(--accent,#32d3e6);
 }
@@ -1629,7 +1628,6 @@ a:hover::after {
   color:#fff;
   -webkit-background-clip:border-box;   /* ngắt clip chữ */
   -webkit-text-fill-color:initial;      /* Safari/iOS fix */
-  border-color:transparent;
   box-shadow:0 4px 18px -3px var(--primary,#2596ff),
              0 0 0 2px var(--accent,#32d3e6);
 }
@@ -1638,13 +1636,12 @@ a:hover::after {
 /* 3️⃣  Pill “Tất cả” (đầu tiên) – có style riêng khi inactive & active */
 .category-pill:first-child{
   background:#fff;
-  color:#64748b;
+  color:#1976d2;
   border-color:#e5e7eb;
 }
 .category-pill:first-child.active{
   background: linear-gradient(90deg,var(--primary,#2596ff),var(--accent,#32d3e6));
   color:#fff;
-  border-color:transparent;
 }
 
 /* Để card-tag là màu thường dễ nhìn */
