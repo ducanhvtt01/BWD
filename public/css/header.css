@@ -68,7 +68,10 @@ header nav a.active,
 header nav a[aria-current="page"]{
   color      : #2596ff;
 }
-
+nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
 /* ====== Mobile (≤ 768 px) ====== */
 @media (max-width:768px){
   :root      { --header-h:64px; }
