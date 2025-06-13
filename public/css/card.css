@@ -2,3 +2,36 @@
 .card{ background:var(--white); border-radius:20px; box-shadow:0 6px 24px rgba(0,0,0,.05); padding:24px; text-align:center; transition:transform .3s,box-shadow .3s;}
 .card:hover{ transform:translateY(-10px); box-shadow:0 8px 32px rgba(0,0,0,.1);}
 .card img{ width:100%; border-radius:12px; margin-bottom:16px;}
+.card {
+  min-width: 320px;
+  max-width: 370px;
+  /* Đảm bảo thẻ rộng hợp lý cho nhiều màn hình */
+  min-height: 380px;   /* Điều chỉnh cho phù hợp thực tế giao diện */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Đẩy các phần lên đầu */
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.card h3 {
+  margin: 16px 0 8px 0;
+}
+
+.card p {
+  flex: 1; /* Giúp nội dung mô tả dàn đều */
+  text-align: center;
+  padding: 0 12px;
+}
+
+.card .btn {
+  margin: 20px 0 12px 0;
+  align-self: center;
+}

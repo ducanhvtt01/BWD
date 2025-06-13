@@ -1,117 +1,218 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
-<meta charset="UTF-8">
-<title>Kỹ năng | ACE SKILLS</title>
-<!-- SEO Meta Tags -->
-<meta name="description" content="Tổng hợp các kỹ năng mềm, kỹ năng sống quan trọng cho mọi lứa tuổi. Học kỹ năng giao tiếp, giải quyết vấn đề, lãnh đạo, sáng tạo tại ACE SKILLS.">
-<meta name="keywords" content="kỹ năng mềm, kỹ năng sống, giao tiếp, lãnh đạo, giải quyết vấn đề, ACE SKILLS, phát triển bản thân">
-<meta name="author" content="ACE SKILLS">
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content="Kỹ năng | ACE SKILLS">
-<meta property="og:description" content="Tổng hợp các kỹ năng mềm, kỹ năng sống quan trọng cho mọi lứa tuổi. Học kỹ năng giao tiếp, giải quyết vấn đề, lãnh đạo, sáng tạo tại ACE SKILLS.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://spendwise.id.vn/skills">
-<meta property="og:image" content="https://spendwise.id.vn/image/image1.png">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kỹ năng | ACE SKILLS">
-<meta name="twitter:description" content="Tổng hợp các kỹ năng mềm, kỹ năng sống quan trọng cho mọi lứa tuổi. Học kỹ năng giao tiếp, giải quyết vấn đề, lãnh đạo, sáng tạo tại ACE SKILLS.">
-<meta name="twitter:image" content="https://spendwise.id.vn/image/image1.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="/css/variables.css">
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/hero.css">
-<link rel="stylesheet" href="/css/section.css">
-<link rel="stylesheet" href="/css/goal.css">
-<link rel="stylesheet" href="/css/card.css">
-<link rel="stylesheet" href="/css/button.css">
-<link rel="stylesheet" href="/css/swiper.css">
-<link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/form.css">
-<link rel="stylesheet" href="/css/responsive.css">
+  <meta charset="UTF-8">
+  <title>Kỹ năng | ACE SKILLS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Các file CSS sẵn có -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/section.css">
+  <link rel="stylesheet" href="/css/goal.css">
+  <link rel="stylesheet" href="/css/card.css">
+  <link rel="stylesheet" href="/css/button.css">
+  <link rel="stylesheet" href="/css/swiper.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <link rel="stylesheet" href="/css/responsive.css">
   <link rel="stylesheet" href="/public/css/wow-theme-index.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/wow-theme-index.css">
-  
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
-<script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-<script defer src="/js/main.js"></script>
+  <!-- Thêm file CSS custom cho trang kỹ năng -->
+  <link rel="stylesheet" href="/css/skills.css">
+  <!-- Các thư viện ngoài -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
+  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script src="/js/card-effect.js"></script>
+  <script src="/js/search-skills.js"></script>
 
+  <style>
+    /* Đảm bảo tiêu đề chính không bị che bởi header */
+    .main-skill-title {
+      margin-top: 90px;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary-dark, #005bb6);
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      background: -webkit-linear-gradient(90deg, #4fc3f7, #005be6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 16px #b6e4ff99;
+    }
+    @media (max-width: 600px) {
+      .main-skill-title {
+        font-size: 1.4rem;
+        margin-top: 70px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <style>
-    body { margin-top: 72px; }
-    @media (max-width: 768px) { body { margin-top: 64px; } }
-  </style>
+  <header>
+    <nav class="container">
+      <div class="logo text-gradient">ACE SKILLS</div>
+      <div>
+        <a href="/">Trang chủ</a>
+        <a href="/skills">Kỹ năng</a>
+        <a href="/courses">Khóa học</a>
+        <a href="/children" data-no-transition>Trẻ em</a>
+        <a href="/donate">Donate</a>
+        <a href="/login">Đăng nhập</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
-  <nav class="container">
-    <div class="logo text-gradient">ACE SKILLS</div>
-    <div>
-      <a href="/">Trang chủ</a>
+  <!-- Kỹ năng mềm -->
+  <section style="padding-top: 0;">
+
+      <!-- Tiêu đề chính -->
+    <h1 class="main-skill-title">Danh sách Kỹ năng</h1>
+      <div class="filter-bar">
+        <input type="text" id="skill-search" placeholder="Tìm kiếm kỹ năng..." class="search-input">
+        <select id="skill-category" class="filter-select">
+          <option value="all">Tất cả</option>
+          <option value="soft">Kỹ năng mềm</option>
+          <option value="life">Kỹ năng sống</option>
+        </select>
+      </div>
+
+    <h2 class="section-title" style="margin-top: 16px;">Kỹ năng mềm</h2>
+    <div class="cards">
+
+      <!-- Giao tiếp -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/giaotiep.png" alt="Giao tiếp" class="icon-skill">
+        <h3>Giao tiếp</h3>
+        <p>Kỹ năng truyền đạt thông tin, thuyết phục và lắng nghe.</p>
+        <a href="/skill/communication" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Giải quyết vấn đề -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/giaiquyetvande.png" alt="Giải quyết vấn đề" class="icon-skill">
+        <h3>Giải quyết vấn đề</h3>
+        <p>Tư duy phân tích, tìm phương án tối ưu và ra quyết định.</p>
+        <a href="/skill/problem-solving" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Lãnh đạo -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/lanhdao.png" alt="Lãnh đạo" class="icon-skill">
+        <h3>Lãnh đạo</h3>
+        <p>Tạo động lực, dẫn dắt đội nhóm tới thành công.</p>
+        <a href="/skill/leadership" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Làm việc nhóm -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/teamwork.png" alt="Làm việc nhóm" class="icon-skill">
+        <h3>Làm việc nhóm</h3>
+        <p>Hợp tác, phân công và phối hợp để đạt mục tiêu chung.</p>
+        <a href="/skill/teamwork" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Quản lý thời gian -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/quanlithoigian.png" alt="Quản lý thời gian" class="icon-skill">
+        <h3>Quản lý thời gian</h3>
+        <p>Lập kế hoạch, ưu tiên công việc và kiểm soát thời gian hiệu quả.</p>
+        <a href="/skill/time-management" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Sáng tạo -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/tuduysangtao.png" alt="Tư duy sáng tạo" class="icon-skill">
+        <h3>Tư duy sáng tạo</h3>
+        <p>Khả năng phát triển ý tưởng mới, tư duy linh hoạt và đổi mới.</p>
+        <a href="/skill/creativity" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Tư duy phản biện -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/tuduyphanbien.png" alt="Tư duy phản biện" class="icon-skill">
+        <h3>Tư duy phản biện</h3>
+        <p>Phân tích, đánh giá vấn đề khách quan để đưa ra quyết định hợp lý.</p>
+        <a href="/skill/critical-thinking" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Quản lý cảm xúc -->
+      <div class="card skill-card" data-category="soft">
+        <img src="/image/quanlicamxuc.png" alt="Quản lý cảm xúc" class="icon-skill">
+        <h3>Quản lý cảm xúc</h3>
+        <p>Nhận diện, kiểm soát cảm xúc và xây dựng mối quan hệ tích cực.</p>
+        <a href="/skill/emotional-intelligence" class="btn">Xem chi tiết</a>
+      </div>
+    </div>
+
+  <!-- Kỹ năng sống -->
+    <h2 class="section-title">Kỹ năng sống</h2>
+    <div class="cards">
+
+      <!-- Tự lập -->
+      <div class="card skill-card" data-category="life">
+        <img src="/image/tulap.png" alt="Tự lập" class="icon-skill">
+        <h3>Tự lập</h3>
+        <p>Khả năng tự chăm sóc bản thân, chủ động giải quyết các vấn đề cá nhân.</p>
+        <a href="/skill/self-reliance" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Kỹ năng sơ cứu cơ bản -->
+      <div class="card skill-card" data-category="life">
+        <img src="/image/socuucoban.png" alt="Sơ cứu cơ bản" class="icon-skill">
+        <h3>Sơ cứu cơ bản</h3>
+        <p>Cách xử lý vết thương, sơ cứu ngất xỉu, băng bó và gọi trợ giúp khi gặp sự cố.</p>
+        <a href="/skill/first-aid" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Kỹ năng sử dụng giao thông an toàn -->
+      <div class="card skill-card" data-category="life">
+        <img src="/image/antoangiaothong.png" alt="Giao thông an toàn" class="icon-skill">
+        <h3>Giao thông an toàn</h3>
+        <p>Hiểu luật giao thông, đi đường an toàn, nhận biết biển báo và xử lý tình huống nguy hiểm.</p>
+        <a href="/skill/traffic-safety" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Kỹ năng thoát hiểm cháy nổ -->
+      <div class="card skill-card" data-category="life">
+        <img src="/image/phongchaychuachay.png" alt="Thoát hiểm cháy nổ" class="icon-skill">
+        <h3>Thoát hiểm cháy nổ</h3>
+        <p>Cách nhận biết nguy hiểm, sử dụng bình chữa cháy và di chuyển an toàn khi có cháy.</p>
+        <a href="/skill/fire-escape" class="btn">Xem chi tiết</a>
+      </div>
+
+      <!-- Kỹ năng sử dụng thiết bị điện tử an toàn -->
+      <div class="card skill-card" data-category="life">
+        <img src="/image/antoansudungdien.png" alt="Thiết bị điện tử an toàn" class="icon-skill">
+        <h3>Thiết bị điện tử an toàn</h3>
+        <p>Cách sử dụng, bảo quản thiết bị điện tử đúng cách, phòng tránh nguy cơ chập cháy, rò điện.</p>
+        <a href="/skill/safe-electronics" class="btn">Xem chi tiết</a>
+      </div>
+</section>
+
+  <footer>
+    <div class="col">
+      <h4>Liên hệ</h4>
+      <a href="mailto:hello@softskill4all.org">hello@softskill4all.org</a>
+      <a href="#">+84 123 456 789</a>
+    </div>
+    <div class="col">
+      <h4>Mạng xã hội</h4>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+    <div class="col">
+      <h4>Chương trình</h4>
       <a href="/skills">Kỹ năng</a>
       <a href="/courses">Khóa học</a>
-      <a href="/children" data-no-transition>Trẻ em</a>
-      <a href="/donate">Donate</a>
-      <a href="/login">Đăng nhập</a>
     </div>
-  </nav>
-</header>
-
-
-<section class="hero" data-aos="fade-up">
-  <h1>Danh sách Kỹ năng</h1>
-  <p>Bắt đầu từ những kỹ năng cơ bản, vươn tới sự chuyên nghiệp.</p>
-  <svg class="wave" viewBox="0 0 1440 320"><path fill="#f0f8ff" fill-opacity="1" d="M0,224L40,197.3C80,171,160,117,240,112C320,107,400,149,480,181.3C560,213,640,235,720,234.7C800,235,880,213,960,192C1040,171,1120,149,1200,160C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-</section>
-
-<section class="section" data-aos="fade-up">
-  <div class="cards">
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?public-speaking" alt="Public Speaking">
-      <h3>Giao tiếp</h3>
-      <p>Kỹ năng truyền đạt thông tin, thuyết phục và lắng nghe.</p>
-      <a href="/courses" class="btn">Khóa học liên quan</a>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?problem-solving" alt="Problem Solving">
-      <h3>Giải quyết vấn đề</h3>
-      <p>Tư duy phân tích, tìm phương án tối ưu và ra quyết định.</p>
-      <a href="/courses" class="btn">Khóa học liên quan</a>
-    </div>
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?leadership" alt="Leadership">
-      <h3>Lãnh đạo</h3>
-      <p>Tạo động lực, dẫn dắt đội nhóm tới thành công.</p>
-      <a href="/courses" class="btn">Khóa học liên quan</a>
-    </div>
-  </div>
-</section>
-
-
-<footer>
-  <div class="col">
-    <h4>Liên hệ</h4>
-    <a href="mailto:hello@softskill4all.org">hello@softskill4all.org</a>
-    <a href="#">+84 123 456 789</a>
-  </div>
-  <div class="col">
-    <h4>Mạng xã hội</h4>
-    <a href="#">Facebook</a>
-    <a href="#">YouTube</a>
-  </div>
-  <div class="col">
-    <h4>Chương trình</h4>
-    <a href="/skills">Kỹ năng</a>
-    <a href="/courses">Khóa học</a>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>

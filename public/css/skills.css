@@ -1,0 +1,279 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.card {
+  width: 340px;
+  min-height: 390px;
+  background: linear-gradient(135deg, #a6d1ff 0%, #d6b6ff 100%);
+  border-radius: 32px;
+  box-shadow: 0 12px 40px 0 #b689ff38, 0 4px 16px #a6d1ff55;
+  border: 2.5px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 28px 34px 28px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition:
+    box-shadow 0.28s cubic-bezier(.7,2,.4,1),
+    transform 0.25s cubic-bezier(.65,1.45,.45,.95),
+    border-color 0.32s,
+    background 0.38s;
+  will-change: transform, box-shadow;
+}
+
+.card:hover {
+  transform: scale(1.06) rotateZ(-0.7deg) translateY(-16px);
+  box-shadow: 0 30px 70px 0 #b689ff82, 0 12px 36px #a6d1ffaa;
+  border-color: #8c89fc;
+  background: linear-gradient(120deg, #bbd7ff 0%, #bbaaff 60%, #d6b6ff 100%);
+}
+
+/* Moving light effect on hover */
+.card::after {
+  content: "";
+  position: absolute;
+  left: -60%;
+  top: -40%;
+  width: 220%;
+  height: 180%;
+  background: linear-gradient(120deg, #fff6 10%, #d9bcff66 70%, #fff0 100%);
+  opacity: 0.34;
+  pointer-events: none;
+  filter: blur(12px);
+  z-index: 2;
+  transition: opacity 0.38s;
+}
+.card:hover::after {
+  opacity: 0.6;
+  animation: moveLight 2.4s linear infinite;
+}
+@keyframes moveLight {
+  0%   { left: -60%; top: -40%; }
+  100% { left: 60%; top: 60%; }
+}
+
+/* Glow border animated on hover */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  pointer-events: none;
+  border: 2.5px solid;
+  border-image: linear-gradient(120deg, #a6d1ff 0%, #c3b3ff 60%, #ae89fa 100%) 1;
+  opacity: 0.17;
+  transition: opacity 0.38s;
+  z-index: 3;
+}
+.card:hover::before {
+  opacity: 0.43;
+  filter: blur(0.5px) brightness(1.3);
+}
+
+.card img, .card .icon-skill {
+  width: 100%;
+  height: 145px;           /* Hoặc 150px cho to rõ, thử chỉnh tới khi ưng ý */
+  object-fit: cover;       /* Cắt hình vừa khít khung, luôn đẹp */
+  border-radius: 20px 20px 10px 10px;
+  margin-bottom: 18px;
+  margin-top: -18px;       /* Để sát trên cùng card, nếu muốn bo khít hơn */
+  filter: drop-shadow(0 7px 22px #b6b3ff33);
+  background: #eaeaff;
+  z-index: 4;
+  transition: transform 0.18s cubic-bezier(.5,2,.1,1);
+}
+
+.card:hover img,
+.card:hover .icon-skill {
+  transform: scale(1.07) rotate(-2deg);
+  filter: drop-shadow(0 13px 38px #c0beff7d);
+}
+
+.card h3 {
+  margin: 15px 0 12px 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  z-index: 4;
+  color: #5024c9;
+  letter-spacing: 0.7px;
+  text-shadow: 0 1px 10px #a6d1ff33;
+}
+
+.card p {
+  flex: 1;
+  font-size: 1.02rem;
+  text-align: center;
+  color: #324186;
+  margin-bottom: 26px;
+  z-index: 4;
+  font-weight: 500;
+  text-shadow: 0 2px 8px #fff7;
+}
+
+.card .btn {
+  font-weight: 800;
+  font-size: 1.14rem;
+  padding: 13px 40px;
+  border-radius: 29px;
+  background: linear-gradient(100deg, #7bd7ff 0%, #3f6ff8 55%, #a170ff 100%);
+  color: #fff;
+  letter-spacing: 0.5px;
+  border: none;
+  z-index: 5;
+  transition: background 0.24s, box-shadow 0.21s, color 0.17s, transform 0.16s;
+  margin-top: 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 28px #b9c7ff55, 0 2px 10px #888fff80;
+}
+.card .btn::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  top: -40%;
+  width: 70%;
+  height: 180%;
+  background: linear-gradient(120deg, #fff9 20%, #fff0 60%);
+  opacity: 0.53;
+  transform: skewX(-23deg);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.2s;
+}
+.card .btn:hover {
+  background: linear-gradient(100deg, #64caff 10%, #3f6ff8 60%, #a170ff 100%);
+  box-shadow: 0 14px 36px #a170ff77, 0 4px 20px #a6d1ffbb;
+  transform: scale(1.07) translateY(-3px);
+  color: #fff;
+  animation: pulseBtn 0.5s;
+}
+@keyframes pulseBtn {
+  0% { box-shadow: 0 0 0 0 #b3aaff33; }
+  60% { box-shadow: 0 0 24px 14px #ae89fa77; }
+  100% { box-shadow: 0 7px 38px #ae89fa59;}
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin: 0px 0 32px 0;
+  letter-spacing: 1.5px;
+  color: #684fff;
+  background: -webkit-linear-gradient(90deg, #6dc4ff, #a56bff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 16px #d6e6ff99;
+}
+
+.main-skill-title {
+  margin-top: 90px;
+  margin-bottom: 2px;
+  text-align: left !important;  /* ép mạnh về trái */
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary-dark, #005bb6);
+  letter-spacing: 1px;
+  background: -webkit-linear-gradient(90deg, #4fc3f7, #005be6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 16px #b6e4ff99;
+  padding-left: 40px;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .main-skill-title {
+    font-size: 1.4rem;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    padding-left: 14px;       /* Mobile cho sát lề hơn */
+  }
+}
+
+
+@media (max-width: 900px) {
+  .cards {
+    gap: 20px;
+  }
+  .card {
+    width: 98vw;
+    min-width: 0;
+    min-height: 310px;
+    padding: 20px 4vw 24px 4vw;
+  }
+}
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 99vw;
+    min-width: 0;
+    min-height: 225px;
+    padding: 10px 3vw 12px 3vw;
+  }
+  .section-title {
+    font-size: 1.25rem;
+    margin: 18px 0 10px 0;
+  }
+}
+
+/* Tìm kiếm filter */
+.filter-bar {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 26px 0;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.search-input {
+  flex: 2 1 300px;      /* chiếm 2 phần */
+  padding-left: 10px;
+  padding-right: 5px;
+  font-size: 1.06rem;
+  border-radius: 10px;
+  border: 1px solid #c6e2ff;
+  background: #fafdff;
+  box-shadow: 0 2px 12px #a6d1ff20;
+  transition: border-color 0.2s;
+}
+
+.filter-select {
+  flex: 1 1 120px;      /* chiếm 1 phần nhỏ */
+  max-width: 220px;
+  min-width: 120px;
+  padding: 12px 18px;
+  font-size: 1.06rem;
+  border-radius: 10px;
+  border: 1px solid #c6e2ff;
+  background: #fafdff;
+  box-shadow: 0 2px 12px #a6d1ff20;
+  transition: border-color 0.2s;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 700px) {
+  .filter-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .filter-select, .search-input {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
