@@ -216,6 +216,11 @@ nav a:hover::after {
   transform-origin: left;
 }
 
+nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;

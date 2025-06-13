@@ -1,3 +1,5 @@
+console.log('main.js loaded');
+
 document.addEventListener('DOMContentLoaded',()=>{
   // Header scroll effect
   const header=document.querySelector('header');
@@ -8,11 +10,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 
   // AOS
-  AOS.init({
-    duration: 800,
-    offset: 50,
-    once: true
-  });
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      offset: 50,
+      once: true
+    });
+  }
 
   // Swiper
   const swiperEl=document.querySelector('.swiper');
@@ -53,4 +57,20 @@ document.addEventListener('DOMContentLoaded',()=>{
     searchInput.addEventListener('input', filterCourses);
     filterSelect.addEventListener('change', filterCourses);
   }
+
+  // Add active class to current page nav link (chỉ cho nav trong header)
+  let currentPath = window.location.pathname.replace(/\/$/, '');
+  if (currentPath === '') currentPath = '/';
+  const headerNav = document.querySelector('header nav');
+  if (!headerNav) return;
+  const navLinks = headerNav.querySelectorAll('a');
+
+  console.log('currentPath:', currentPath);
+  navLinks.forEach(link => {
+    let linkPath = link.getAttribute('href').replace(/\/$/, '');
+    if (linkPath === '') linkPath = '/';
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+  });
 });
