@@ -191,54 +191,10 @@
       <!-- Các chiến dịch khác -->
       <div class="other-campaigns" style="margin: 48px 0 0 0">
         <h3>Các chiến dịch khác</h3>
-        <div
-          class="other-campaigns-list"
-          style="display: flex; gap: 24px; flex-wrap: wrap"
-        >
-          <div class="other-campaign-card" data-campaign="Trường Sa">
-            <img
-              src="/image/doidocu.png"
-              alt="Đổi đồ cũ"
-              style="
-                width: 180px;
-                height: 100px;
-                object-fit: cover;
-                border-radius: 12px;
-              "
-            />
-            <div style="font-weight: 700; color: #1761a0; margin-top: 8px">
-              ĐỔI ĐỒ CŨ - NHẬN NIỀM VUI MỚI
-            </div>
-            <div style="font-size: 0.98rem; color: #888">
-              Gây quỹ xanh cho trẻ em vùng cao
-            </div>
-            <div style="font-size: 0.98rem; color: #ff6600">18%</div>
-          </div>
-          <div class="other-campaign-card" data-campaign="Cho em đến trường">
-            <img
-              src="/image/choemdentruong.png"
-              alt="Cho em đến trường"
-              style="
-                width: 180px;
-                height: 100px;
-                object-fit: cover;
-                border-radius: 12px;
-              "
-            />
-            <div style="font-weight: 700; color: #1761a0; margin-top: 8px">
-              CHO EM ĐẾN TRƯỜNG
-            </div>
-            <div style="font-size: 0.98rem; color: #888">
-              Kêu gọi kinh phí mua sách, điều kiện học tập cho trẻ em khó khăn
-            </div>
-            <div style="font-size: 0.98rem; color: #ff6600">10%</div>
-          </div>
-        </div>
-        <div style="text-align: right; margin-top: 8px">
-          <a href="/donate" style="color: #2596ff; font-weight: 600"
-            >Xem tất cả →</a
-          >
-        </div>
+        <div id="other-campaigns-list" class="other-campaigns-list"
++      style="display:flex;gap:24px;flex-wrap:wrap">
++   <!-- JS sẽ inject card vào đây -->
++ </div>
       </div>
       <!-- Modal Ủng hộ -->
       <div id="donate-modal" class="donate-modal" style="display: none">
@@ -476,6 +432,51 @@
    ]
         },
       };
+      /**
+ * Render danh sách "Các chiến dịch khác" (bỏ qua chiến dịch hiện tại)
+ */
+function renderOtherCampaigns(currentName) {
+  const container = document.getElementById('other-campaigns-list');
+  if (!container) return;
+
+  // Xóa hết nội dung cũ
+  container.innerHTML = '';
+
+  // Duyệt qua tất cả các key trong campaigns
+  Object.keys(campaigns).forEach(name => {
+    if (name === currentName) return; // bỏ qua campaign đang xem
+
+    const c = campaigns[name];
+    // Tạo thẻ wrapper
+    const card = document.createElement('div');
+    card.className = 'other-campaign-card';
+    card.setAttribute('data-campaign', name);
+
+    // Nội dung bên trong
+    card.innerHTML = `
+      <img src="${c.img}" alt="${c.title}"
+           style="width:180px;height:100px;object-fit:cover;border-radius:12px;">
+      <div style="font-weight:700;color:#1761a0;margin-top:8px;">
+        ${c.title}
+      </div>
+      <div style="font-size:0.98rem;color:#888;">
+        ${c.short}
+      </div>
+      <div style="font-size:0.98rem;color:#ff6600;">
+        ${c.progress}%
+      </div>
+    `;
+
+    // Gắn sự kiện click chuyển trang detail
+    card.addEventListener('click', () => {
+      window.location.href = 
+        '/campaign-detail.html?name=' + encodeURIComponent(name);
+    });
+
+    container.appendChild(card);
+  });
+}
+
 function renderDonors(name) {
   const container = document.getElementById('donors-list');
   const c = campaigns[name] || campaigns["Trường Sa"];
@@ -549,6 +550,7 @@ function renderDonors(name) {
         document.querySelector('.campaign-contact [href^="https://"]').href =
           c.orgWeb;
             renderDonors(name);
+            renderOtherCampaigns(name);
       }
 
       document.addEventListener("DOMContentLoaded", updateCampaignDetail);
