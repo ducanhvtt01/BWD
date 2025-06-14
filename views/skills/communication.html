@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kỹ năng Giao tiếp | ACE SKILLS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ── CSS chung của site ─────────────────────────── -->
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/section.css" />
+    <link rel="stylesheet" href="/css/card.css" />
+    <link rel="stylesheet" href="/css/button.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <!-- ── CSS RIÊNG cho trang này ─────────────────────── -->
+    <link rel="stylesheet" href="/css/skill-communication.css" />
+
+    <!-- ── Thư viện ngoài (AOS + Swiper) ──────────────── -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@9/swiper-bundle.min.css"
+    />
+
+    <script
+      defer
+      src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/card-effect.js"></script>
+    <script defer src="/js/search-skills.js"></script>
+  </head>
+
+  <body>
+    <!-- Header cố định của site (nếu bạn include bằng template thì bỏ qua) -->
+    <!-- <header>…</header> -->
+
+    <main class="container">
+      <!-- ── TIÊU ĐỀ & ẢNH HERO ───────────────────────── -->
+      <h1 class="main-skill-title">Kỹ năng Giao tiếp</h1>
+
+      <img
+        class="skill-illustration"
+        src="/image/giaotiep.png"
+        alt="Giao tiếp"
+        data-aos="zoom-in"
+      />
+
+      <p class="skill-definition" data-aos="fade-up">
+        <strong>Định nghĩa:</strong>
+        Kỹ năng giao tiếp là khả năng truyền đạt thông tin hiệu quả, lắng nghe,
+        thuyết phục và tương tác với người khác nhằm đạt được mục tiêu chung.
+      </p>
+
+      <!-- ── WAVE TRÊN (ngăn cách) ─────────────────────── -->
+      <div class="wave wave--top"></div>
+
+      <!-- ── SECTION KHOÁ HỌC LIÊN QUAN ────────────────── -->
+      <section class="related-skill">
+        <h2 class="related-title" data-aos="fade-up">
+          Khóa học liên quan
+        </h2>
+
+        <div class="card-grid">
+          <!-- CARD 1 -->
+          <article class="card" data-aos="zoom-in">
+            <img
+              src="/image/giaotiep.png"
+              alt="Kỹ năng giao tiếp"
+            />
+            <h3>Kỹ năng giao tiếp</h3>
+            <p>
+              Khoá học nền tảng về giao tiếp hiệu quả.
+            </p>
+            <a
+              href="/course-detail.html?id=communication-101"
+              class="btn"
+              >Xem chi tiết</a
+            >
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="120">
+            <img src="/image/teamwork.png" alt="Kỹ năng làm việc nhóm" />
+            <h3>Kỹ năng làm việc nhóm</h3>
+            <p>
+              Kỹ năng làm việc nhóm hiệu quả với mọi người.
+            </p>
+            <a
+              href="/course-detail.html?id=presentation-skill"
+              class="btn"
+              >Xem chi tiết</a
+            >
+          </article>
+
+          <!-- Thêm nhiều <article class="card"> … </article> khác tại đây -->
+        </div>
+      </section>
+
+      <!-- ── WAVE DƯỚI (kết section) ───────────────────── -->
+      <div class="wave wave--bottom"></div>
+    </main>
+
+    <!-- Footer chung của site (nếu có) -->
+    <!-- <footer>…</footer> -->
+
+    <!-- Khởi tạo AOS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({ once: true, duration: 800, offset: 120 });
+      });
+    </script>
+  </body>
+</html>
