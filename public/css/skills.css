@@ -1,9 +1,11 @@
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px;
-  justify-content: center;
-  margin-bottom: 48px;
+  display: flex
+;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+    margin: 48px auto 0 auto;
 }
 
 .card {
